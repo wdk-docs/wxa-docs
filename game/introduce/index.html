@@ -1,0 +1,2913 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="微信应用文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>接入指南 - 微信应用文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="微信应用文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                微信应用文档
+              </span>
+              <span class="md-header-nav__topic">
+                接入指南
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wxdocs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wxdocs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="介绍" class="md-tabs__link">
+        介绍
+      </a>
+    
+  </li>
+
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../design/" title="设计" class="md-tabs__link">
+        设计
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../introduce/access-guide/" title="程序指南" class="md-tabs__link">
+          程序指南
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../app/base/quickstart/" title="程序开发" class="md-tabs__link">
+          程序开发
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../analysis/function/" title="程序数据" class="md-tabs__link">
+          程序数据
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="游戏指南" class="md-tabs__link md-tabs__link--active">
+          游戏指南
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../dev/" title="游戏开发" class="md-tabs__link">
+          游戏开发
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../analysis/" title="游戏数据" class="md-tabs__link">
+          游戏数据
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../product/" title="运营" class="md-tabs__link">
+          运营
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="微信应用文档" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    微信应用文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wxdocs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wxdocs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../design/" title="设计" class="md-nav__link">
+      设计
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      程序指南
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        程序指南
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduce/access-guide/" title="接入指南" class="md-nav__link">
+      接入指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduce/custom/" title="客服功能" class="md-nav__link">
+      客服功能
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduce/qrcode/" title="扫码打开" class="md-nav__link">
+      扫码打开
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduce/plugin/" title="插件接入" class="md-nav__link">
+      插件接入
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      程序开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        程序开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      简易教程
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        简易教程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1-1" type="checkbox" id="nav-4-1-1">
+    
+    <label class="md-nav__link" for="nav-4-1-1">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-1-1">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/quickstart/" title="起步" class="md-nav__link">
+      起步
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/file/" title="代码构成" class="md-nav__link">
+      代码构成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/framework/" title="小程序能力" class="md-nav__link">
+      小程序能力
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/role/" title="发布前准备" class="md-nav__link">
+      发布前准备
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/release/" title="上线" class="md-nav__link">
+      上线
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/demo/" title="体验小程序" class="md-nav__link">
+      体验小程序
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/new/" title="更新日志" class="md-nav__link">
+      更新日志
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/" title="框架" class="md-nav__link">
+      框架
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/" title="组件" class="md-nav__link">
+      组件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="概览" class="md-nav__link">
+      概览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="界面" class="md-nav__link">
+      界面
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="快捷键" class="md-nav__link">
+      快捷键
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="代码编辑" class="md-nav__link">
+      代码编辑
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="小程序调试" class="md-nav__link">
+      小程序调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="命令行调用" class="md-nav__link">
+      命令行调用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="HTTP 调用" class="md-nav__link">
+      HTTP 调用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="小程序开发助手" class="md-nav__link">
+      小程序开发助手
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="代码片段" class="md-nav__link">
+      代码片段
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/ext/" title="第三方平台" class="md-nav__link">
+      第三方平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="小程序插件开发" class="md-nav__link">
+      小程序插件开发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="云测试" class="md-nav__link">
+      云测试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="实现差异" class="md-nav__link">
+      实现差异
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="下载" class="md-nav__link">
+      下载
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="历史更新日志" class="md-nav__link">
+      历史更新日志
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/" title="Q&A" class="md-nav__link">
+      Q&A
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      程序数据
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        程序数据
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analysis/function/" title="功能概述" class="md-nav__link">
+      功能概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analysis/regular/" title="常规分析" class="md-nav__link">
+      常规分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analysis/custom/" title="自定义分析" class="md-nav__link">
+      自定义分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../analysis/assistant/" title="小程序数据助手" class="md-nav__link">
+      小程序数据助手
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      游戏指南
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        游戏指南
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        接入指南
+      </label>
+    
+    <a href="./" title="接入指南" class="md-nav__link md-nav__link--active">
+      接入指南
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="产品定位及功能介绍" class="md-nav__link">
+    产品定位及功能介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="小游戏注册" class="md-nav__link">
+    小游戏注册
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="注册小程序帐号" class="md-nav__link">
+    注册小程序帐号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="选择注册的帐号类型" class="md-nav__link">
+    选择注册的帐号类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="填写邮箱和密码" class="md-nav__link">
+    填写邮箱和密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="激活邮箱" class="md-nav__link">
+    激活邮箱
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="填写主体信息" class="md-nav__link">
+    填写主体信息
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="选择主体类型" class="md-nav__link">
+    选择主体类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="填写主体信息并选择验证方式" class="md-nav__link">
+    填写主体信息并选择验证方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="填写管理员信息" class="md-nav__link">
+    填写管理员信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="确认主体信息不可变更" class="md-nav__link">
+    确认主体信息不可变更
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="点击确认完成注册流程" class="md-nav__link">
+    点击确认完成注册流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" title="小游戏信息完善及开发前准备" class="md-nav__link">
+    小游戏信息完善及开发前准备
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="登录小程序管理平台" class="md-nav__link">
+    登录小程序管理平台
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="完善小程序信息" class="md-nav__link">
+    完善小程序信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="小游戏类目开放范围" class="md-nav__link">
+    小游戏类目开放范围
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="开发前准备" class="md-nav__link">
+    开发前准备
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="绑定项目成员" class="md-nav__link">
+    绑定项目成员
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appid" title="获取AppID" class="md-nav__link">
+    获取AppID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="阅读开发文档并下载开发者工具" class="md-nav__link">
+    阅读开发文档并下载开发者工具
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" title="开发者工具的使用" class="md-nav__link">
+    开发者工具的使用
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="下载并安装开发者工具" class="md-nav__link">
+    下载并安装开发者工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" title="登录" class="md-nav__link">
+    登录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" title="创建项目" class="md-nav__link">
+    创建项目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" title="开发" class="md-nav__link">
+    开发
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" title="预览" class="md-nav__link">
+    预览
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" title="上传代码" class="md-nav__link">
+    上传代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" title="代码审核与发布" class="md-nav__link">
+    代码审核与发布
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" title="提交审核" class="md-nav__link">
+    提交审核
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" title="审核信息填写" class="md-nav__link">
+    审核信息填写
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" title="游戏资质提交及类目确认" class="md-nav__link">
+    游戏资质提交及类目确认
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" title="测试帐号" class="md-nav__link">
+    测试帐号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" title="完成提交" class="md-nav__link">
+    完成提交
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" title="代码发布" class="md-nav__link">
+    代码发布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" title="小游戏申请微信认证" class="md-nav__link">
+    小游戏申请微信认证
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" title="小游戏申请虚拟支付" class="md-nav__link">
+    小游戏申请虚拟支付
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" title="开通微信支付" class="md-nav__link">
+    开通微信支付
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" title="开通虚拟支付" class="md-nav__link">
+    开通虚拟支付
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" title="支付协议签订" class="md-nav__link">
+    支付协议签订
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" title="设置提现账户" class="md-nav__link">
+    设置提现账户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" title="游戏币托管" class="md-nav__link">
+    游戏币托管
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" title="支付订单查询" class="md-nav__link">
+    支付订单查询
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_43" title="公众号关联小程序" class="md-nav__link">
+    公众号关联小程序
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_44" title="关联规则" class="md-nav__link">
+    关联规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" title="关联流程" class="md-nav__link">
+    关联流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="qrcode/" title="扫码打开" class="md-nav__link">
+      扫码打开
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="qcloud/" title="腾讯云支持" class="md-nav__link">
+      腾讯云支持
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      游戏开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        游戏开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      教程
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        教程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-1" type="checkbox" id="nav-7-1-1">
+    
+    <label class="md-nav__link" for="nav-7-1-1">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-1">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/" title="快速上手" class="md-nav__link">
+      快速上手
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/base/adapter/" title="Adapter" class="md-nav__link">
+      Adapter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/base/engine/" title="对引擎的支持" class="md-nav__link">
+      对引擎的支持
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/base/module/" title="模块化" class="md-nav__link">
+      模块化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-2" type="checkbox" id="nav-7-1-2">
+    
+    <label class="md-nav__link" for="nav-7-1-2">
+      能力
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-2">
+        能力
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/ability/audio/" title="音频播放" class="md-nav__link">
+      音频播放
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/ability/file-system/" title="文件系统" class="md-nav__link">
+      文件系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-3" type="checkbox" id="nav-7-1-3">
+    
+    <label class="md-nav__link" for="nav-7-1-3">
+      可用性
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-3">
+        可用性
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/usability/debug/" title="调试" class="md-nav__link">
+      调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/usability/performance/" title="性能" class="md-nav__link">
+      性能
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/usability/update/" title="小游戏更新" class="md-nav__link">
+      小游戏更新
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/usability/worker/" title="多线程 Worker" class="md-nav__link">
+      多线程 Worker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-4" type="checkbox" id="nav-7-1-4">
+    
+    <label class="md-nav__link" for="nav-7-1-4">
+      开放能力
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-4">
+        开放能力
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/open-ability/authorize/" title="用户授权" class="md-nav__link">
+      用户授权
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/open-ability/http-signature/" title="用户登录态签名" class="md-nav__link">
+      用户登录态签名
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/open-ability/midas-signature/" title="米大师支付签名" class="md-nav__link">
+      米大师支付签名
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/open-ability/open-data/" title="关系链数据使用指南" class="md-nav__link">
+      关系链数据使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/open-ability/payment/" title="虚拟支付" class="md-nav__link">
+      虚拟支付
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/open-ability/qrcode/" title="获取二维码" class="md-nav__link">
+      获取二维码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/open-ability/share/" title="转发" class="md-nav__link">
+      转发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/tutorial/open-ability/signature/" title="用户数据的签名验证和加解密" class="md-nav__link">
+      用户数据的签名验证和加解密
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-2" type="checkbox" id="nav-7-2">
+    
+    <label class="md-nav__link" for="nav-7-2">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-2">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/render/" title="渲染" class="md-nav__link">
+      渲染
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/system/" title="系统" class="md-nav__link">
+      系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/device/" title="设备" class="md-nav__link">
+      设备
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/file/" title="文件" class="md-nav__link">
+      文件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/location/" title="位置" class="md-nav__link">
+      位置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/network/" title="网络" class="md-nav__link">
+      网络
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/open-api/" title="开放接口" class="md-nav__link">
+      开放接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/share/" title="转发" class="md-nav__link">
+      转发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/debug/" title="调试" class="md-nav__link">
+      调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/storage/" title="数据缓存" class="md-nav__link">
+      数据缓存
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/ui/" title="界面" class="md-nav__link">
+      界面
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/update/" title="更新" class="md-nav__link">
+      更新
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/worker/" title="Worker" class="md-nav__link">
+      Worker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/media/" title="媒体" class="md-nav__link">
+      媒体
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/performance/" title="性能" class="md-nav__link">
+      性能
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/clearTimeout/" title="定时器" class="md-nav__link">
+      定时器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/api/midas-payment/" title="虚拟支付" class="md-nav__link">
+      虚拟支付
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/devtools/devtools/" title="工具" class="md-nav__link">
+      工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev/qcloud/qcloud/" title="腾讯云支持" class="md-nav__link">
+      腾讯云支持
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      游戏数据
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        游戏数据
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analysis/" title="功能概述" class="md-nav__link">
+      功能概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analysis/analysis/" title="常规分析" class="md-nav__link">
+      常规分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../analysis/assistant/" title="小游戏数据助手" class="md-nav__link">
+      小游戏数据助手
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      运营
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        运营
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="运营规范" class="md-nav__link">
+      运营规范
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="常见拒绝情形" class="md-nav__link">
+      常见拒绝情形
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="服务条款" class="md-nav__link">
+      服务条款
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="微信认证指引" class="md-nav__link">
+      微信认证指引
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="特殊行业所需资质材料" class="md-nav__link">
+      特殊行业所需资质材料
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="产品定位及功能介绍" class="md-nav__link">
+    产品定位及功能介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="小游戏注册" class="md-nav__link">
+    小游戏注册
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="注册小程序帐号" class="md-nav__link">
+    注册小程序帐号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="选择注册的帐号类型" class="md-nav__link">
+    选择注册的帐号类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="填写邮箱和密码" class="md-nav__link">
+    填写邮箱和密码
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="激活邮箱" class="md-nav__link">
+    激活邮箱
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="填写主体信息" class="md-nav__link">
+    填写主体信息
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="选择主体类型" class="md-nav__link">
+    选择主体类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="填写主体信息并选择验证方式" class="md-nav__link">
+    填写主体信息并选择验证方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="填写管理员信息" class="md-nav__link">
+    填写管理员信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="确认主体信息不可变更" class="md-nav__link">
+    确认主体信息不可变更
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="点击确认完成注册流程" class="md-nav__link">
+    点击确认完成注册流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" title="小游戏信息完善及开发前准备" class="md-nav__link">
+    小游戏信息完善及开发前准备
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="登录小程序管理平台" class="md-nav__link">
+    登录小程序管理平台
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="完善小程序信息" class="md-nav__link">
+    完善小程序信息
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="小游戏类目开放范围" class="md-nav__link">
+    小游戏类目开放范围
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="开发前准备" class="md-nav__link">
+    开发前准备
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="绑定项目成员" class="md-nav__link">
+    绑定项目成员
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appid" title="获取AppID" class="md-nav__link">
+    获取AppID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="阅读开发文档并下载开发者工具" class="md-nav__link">
+    阅读开发文档并下载开发者工具
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" title="开发者工具的使用" class="md-nav__link">
+    开发者工具的使用
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="下载并安装开发者工具" class="md-nav__link">
+    下载并安装开发者工具
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" title="登录" class="md-nav__link">
+    登录
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" title="创建项目" class="md-nav__link">
+    创建项目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" title="开发" class="md-nav__link">
+    开发
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" title="预览" class="md-nav__link">
+    预览
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" title="上传代码" class="md-nav__link">
+    上传代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" title="代码审核与发布" class="md-nav__link">
+    代码审核与发布
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" title="提交审核" class="md-nav__link">
+    提交审核
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" title="审核信息填写" class="md-nav__link">
+    审核信息填写
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_31" title="游戏资质提交及类目确认" class="md-nav__link">
+    游戏资质提交及类目确认
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" title="测试帐号" class="md-nav__link">
+    测试帐号
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" title="完成提交" class="md-nav__link">
+    完成提交
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" title="代码发布" class="md-nav__link">
+    代码发布
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" title="小游戏申请微信认证" class="md-nav__link">
+    小游戏申请微信认证
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" title="小游戏申请虚拟支付" class="md-nav__link">
+    小游戏申请虚拟支付
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" title="开通微信支付" class="md-nav__link">
+    开通微信支付
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" title="开通虚拟支付" class="md-nav__link">
+    开通虚拟支付
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" title="支付协议签订" class="md-nav__link">
+    支付协议签订
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" title="设置提现账户" class="md-nav__link">
+    设置提现账户
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" title="游戏币托管" class="md-nav__link">
+    游戏币托管
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" title="支付订单查询" class="md-nav__link">
+    支付订单查询
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_43" title="公众号关联小程序" class="md-nav__link">
+    公众号关联小程序
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_44" title="关联规则" class="md-nav__link">
+    关联规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" title="关联流程" class="md-nav__link">
+    关联流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">微信小游戏接入指南<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">产品定位及功能介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>微信小游戏是小程序的一个类目。用户完成小程序注册后，可选择“游戏”类目并开始开发、调试小游戏。</p>
+<h2 id="_3">小游戏注册<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">注册小程序帐号<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>在微信公众平台官网首页（mp.weixin.qq.com）点击右上角的“立即注册”按钮。</p>
+<p><img alt="a" src="/assets/images/a.png" /></p>
+<h3 id="_5">选择注册的帐号类型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>选择“小程序”，点击“查看类型区别”可查看不同类型帐号的区别和优势。</p>
+<h3 id="_6">填写邮箱和密码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>请填写未注册过公众平台、开放平台、企业号、未绑定个人号的邮箱。</p>
+<h3 id="_7">激活邮箱<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>登录邮箱，查收激活邮件，点击激活链接。</p>
+<h3 id="_8">填写主体信息<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>点击激活链接后，继续下一步的注册流程。请选择主体类型选择，完善主体信息和管理员信息。</p>
+<h4 id="_9">选择主体类型<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p><img alt="03271" src="/assets/images/03271.png" /></p>
+<p>主体类型说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>帐号主体</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>个人</td>
+<td>18岁以上有国内身份信息的微信实名用户</td>
+</tr>
+<tr>
+<td>企业</td>
+<td>企业、分支机构、企业相关品牌。</td>
+</tr>
+<tr>
+<td>企业（个体工商户）</td>
+<td>个体工商户。</td>
+</tr>
+<tr>
+<td>政府</td>
+<td>国内、各级、各类政府机构、事业单位、具有行政职能的社会组织等。目前主要覆盖公安机构、党团机构、司法机构、交通机构、旅游机构、工商税务机</td>
+</tr>
+<tr>
+<td>媒体</td>
+<td>报纸、杂志、电视、电台、通讯社、其他等。</td>
+</tr>
+<tr>
+<td>其他组织</td>
+<td>不属于政府、媒体、企业或个人的类型。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_10">填写主体信息并选择验证方式<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li>企业类型帐号可选择两种主体验证方式。 方式一：需要用公司的对公账户向腾讯公司打款来验证主体身份。打款信息在提交主体信息后可以查看到。 方式二：通过微信认证验证主体身份，需支付300元认证费。认证通过前，小程序部分功能暂无法使用。</li>
+</ul>
+<p><img alt="2" src="/assets/images/2.png" /></p>
+<ul>
+<li>政府、媒体、其他组织类型帐号，必须通过微信认证验证主体身份。认证通过前，小程序部分功能暂无法使用。</li>
+</ul>
+<p><img alt="3" src="/assets/images/3.png" /></p>
+<ul>
+<li>微信认证入口：登录小程序 - 设置 - 微信认证详情</li>
+</ul>
+<p><img alt="w" src="/assets/images/w.png" /></p>
+<h4 id="_11">填写管理员信息<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p><img alt="4" src="/assets/images/4.png" /></p>
+<h4 id="_12">确认主体信息不可变更<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p><img alt="5" src="/assets/images/5.png" /></p>
+<h4 id="_13">点击确认完成注册流程<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>选择对公打款的用户，请根据页面提示，向指定的收款帐号汇入指定金额。 注意：请在10天内完成汇款，否则将注册失败</p>
+<p><img alt="6" src="/assets/images/6.png" /></p>
+<p>选择通过微信认证验证主体身份的用户，完成注册流程后请尽快进行微信认证，认证完成之前部分功能暂不可使用。</p>
+<h2 id="_14">小游戏信息完善及开发前准备<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="_15">登录小程序管理平台<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>完成注册后，在微信公众平台官网首页（mp.weixin.qq.com）的登录入口直接登录</p>
+<p><img alt="a" src="/assets/images/a.png" /></p>
+<h3 id="_16">完善小程序信息<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>完成注册后，微信小程序信息完善步骤和开发可同步进行。</p>
+<p>选择对公打款的用户，完成汇款验证后，可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。</p>
+<p><img alt="u" src="/assets/images/u.png" /></p>
+<p>选择通过微信认证验证主体身份的用户，需先完成微信认证后，才可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。</p>
+<p><img alt="7" src="/assets/images/7.png" /></p>
+<h3 id="_17">小游戏类目开放范围<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p>小游戏面向个人、企业、媒体、政府及其他组织主体开放。其中，个人开发者主体小游戏暂不支持开通虚拟支付。</p>
+<h3 id="_18">开发前准备<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h4 id="_19">绑定项目成员<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<p>登录微信公众平台小程序，进入用户身份- 绑定小程序项目成员，包括开发者、体验者及其他成员。</p>
+<h4 id="appid">获取AppID<a class="headerlink" href="#appid" title="Permanent link">&para;</a></h4>
+<p>进入“设置-开发设置”，获取AppID信息。</p>
+<p><img alt="i" src="/assets/images/i.png" /></p>
+<h4 id="_20">阅读开发文档并下载开发者工具<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<p>点击页面右上角文档-开发，详细阅读开发者文档并进入下载页面，下载开发者工具。</p>
+<h2 id="_21">开发者工具的使用<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<h3 id="_22">下载并安装开发者工具<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<h3 id="_23">登录<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
+<p>开发者工具使用管理员或者绑定的开发者微信号扫码登录。</p>
+<p><img alt="k" src="/assets/images/k.png" /></p>
+<h3 id="_24">创建项目<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>小程序的管理员或已绑定的开发者可以创建项目。需要填写AppID、项目名称及本地开发目录。</p>
+<p><img alt="l" src="/assets/images/l.png" /></p>
+<h3 id="_25">开发<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>管理员和开发者可在开发者工具内完成小程序的开发、调试、预览、上传代码等操作。</p>
+<p><img alt="k" src="/assets/images/k.png" /></p>
+<h3 id="_26">预览<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p>小程序的管理员或是开发者可点击左侧“项目”，进入上传/预览页面。点击“预览”，开发者可用本人微信扫码，在手机内预览小程序的效果。</p>
+<p>注意：</p>
+<div class="codehilite"><pre><span></span>开发工具上的二维码仅限于登录开发工具的开发者本人可以扫码并预览，其他人无法扫码预览。
+请用微信客户端iOS或Android的6.3.27及以上版本才可以扫码预览。
+</pre></div>
+
+
+<p><img alt="o" src="/assets/images/o.png" /></p>
+<h3 id="_27">上传代码<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>小程序的管理员可点击左侧“项目”，进入上传/预览页面，使用管理员本人微信号扫码确认上传。 注意：</p>
+<div class="codehilite"><pre><span></span>只有管理员有权限可以上传，开发者没有权限上传。
+</pre></div>
+
+
+<p><img alt="p" src="/assets/images/p.png" /></p>
+<p>代码上传后可在微信公众平台（mp.weixin.qq.com），开发管理页面中看到对应提交的版本。</p>
+<p><img alt="q" src="/assets/images/q.png" /></p>
+<h2 id="_28">代码审核与发布<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<h3 id="_29">提交审核<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<p>登录微信公众平台小程序，进入开发管理，开发版本中展示已上传的代码，管理员可提交审核或是删除代码。</p>
+<p><img alt="q" src="/assets/images/q.png" /></p>
+<h3 id="_30">审核信息填写<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<h4 id="_31">游戏资质提交及类目确认<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h4>
+<p>确认游戏类目，并且提交资质文档。</p>
+<p>非个人主体需提交：《广电总局版号批文》 、《文化部备案信息》、《计算机软件著作权登记证书》、《游戏自审自查报告》</p>
+<p>个人主体需提交：《计算机软件著作权登记证书》、《游戏自审自查报告》</p>
+<p><img alt="3211" src="/assets/images/3211.png" /></p>
+<h4 id="_32">测试帐号<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h4>
+<p>当小程序需要开发者提供测试帐号才能完成审核体验时，小程序在首次提交审核时将被打回，再次提交审核时将开放提供测试帐号的入口，该入口将由开发者提供帐号给微信审核人员审核微信小程序时登录使用。</p>
+<p><img alt="03272" src="/assets/images/03272.png" /></p>
+<h4 id="_33">完成提交<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<p>提交审核完成后，开发管理页中审核版本模块展示审核进度。</p>
+<p><img alt="t" src="/assets/images/t.png" /></p>
+<p>提示：</p>
+<div class="codehilite"><pre><span></span>开发者可参考《微信小程序平台常见拒绝情形》，详细了解审核标准。
+</pre></div>
+
+
+<h4 id="_34">代码发布<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<p>代码审核通过，需要开发者手动点击发布，小程序才会发布到线上提供服务。</p>
+<p>注意： 内测期间，代码发布按钮不可点击。</p>
+<h2 id="_35">小游戏申请微信认证<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h2>
+<p>政府、媒体、其他组织类型帐号，必须通过微信认证验证主体身份。企业类型帐号，可以根据需要确定是否申请微信认证。已认证帐号可使用微信支付权限。</p>
+<p>个人类型帐号暂不支持微信认证。</p>
+<p>认证入口：登录小程序—设置—基本设置—微信认证—详情</p>
+<p><img alt="x" src="/assets/images/x.png" /></p>
+<h2 id="_36">小游戏申请虚拟支付<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<h3 id="_37">开通微信支付<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>主体类型为个体工商户或企业已认证小游戏
+
+开通微信支付
+</pre></div>
+
+
+<p><img alt="y" src="/assets/images/y.png" /></p>
+<h3 id="_38">开通虚拟支付<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<p><img alt="3212" src="/assets/images/3212.png" /></p>
+<h3 id="_39">支付协议签订<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h3>
+<p>确认仔细阅读支付协议并签订同意</p>
+<p><img alt="3213" src="/assets/images/3213.png" /></p>
+<h3 id="_40">设置提现账户<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
+<p>用户在小游戏内完成的交易款项经结算后会提现至开发者的银行账户</p>
+<p><img alt="3214" src="/assets/images/3214.png" /></p>
+<h3 id="_41">游戏币托管<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h3>
+<p>游戏类目内，游戏币需托管至平台</p>
+<p><img alt="3215" src="/assets/images/3215.png" /></p>
+<div class="codehilite"><pre><span></span>管理员进行授权
+</pre></div>
+
+
+<p><img alt="3231" src="/assets/images/3231.png" />
+    填写游戏币名称及兑换比例
+<img alt="3232" src="/assets/images/3232.png" /></p>
+<div class="codehilite"><pre><span></span>游戏分区配置
+</pre></div>
+
+
+<p><img alt="3233" src="/assets/images/3233.png" /></p>
+<div class="codehilite"><pre><span></span>联调发布
+</pre></div>
+
+
+<p><img alt="3234" src="/assets/images/3234.png" /></p>
+<div class="codehilite"><pre><span></span>应用上线申请提交后需通过审核
+</pre></div>
+
+
+<p><img alt="3235" src="/assets/images/3235.png" /></p>
+<h3 id="_42">支付订单查询<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h3>
+<p>开通虚拟支付后，可查询支付订单</p>
+<p><img alt="3216" src="/assets/images/3216.png" /></p>
+<h2 id="_43">公众号关联小程序<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h2>
+<p>公众号关联小程序后，将可在图文消息、自定义菜单、模板消息等功能中使用小程序。</p>
+<h3 id="_44">关联规则<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
+<ol>
+<li>所有公众号都可以关联小程序。</li>
+<li>一个公众号可关联10个同主体的小程序，3个不同主体的小程序。</li>
+<li>一个小程序可关联500个公众号。</li>
+<li>公众号一个月可新增关联小程序13次，小程序一个月可新增关联500次。</li>
+</ol>
+<h3 id="_45">关联流程<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<p>登录公众号后台-小程序-小程序管理-添加-关联小程序</p>
+<p><img alt="06211" src="/assets/images/06211.png" /></p>
+<p><img alt="06212" src="/assets/images/06212.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../analysis/assistant/" title="小程序数据助手" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                小程序数据助手
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="qrcode/" title="扫码打开" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                扫码打开
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            @2018 wxdocs.github.io
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

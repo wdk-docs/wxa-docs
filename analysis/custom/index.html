@@ -1,0 +1,2774 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="微信应用文档">
+      
+      
+      
+        <meta name="author" content="Nosy">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>自定义分析 - 微信应用文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="微信应用文档" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                微信应用文档
+              </span>
+              <span class="md-header-nav__topic">
+                自定义分析
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/wxdocs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wxdocs
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="介绍" class="md-tabs__link">
+        介绍
+      </a>
+    
+  </li>
+
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../design/" title="设计" class="md-tabs__link">
+        设计
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../introduce/access-guide/" title="程序指南" class="md-tabs__link">
+          程序指南
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../app/base/quickstart/" title="程序开发" class="md-tabs__link">
+          程序开发
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../function/" title="程序数据" class="md-tabs__link md-tabs__link--active">
+          程序数据
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../game/introduce/" title="游戏指南" class="md-tabs__link">
+          游戏指南
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../game/dev/" title="游戏开发" class="md-tabs__link">
+          游戏开发
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../game/analysis/" title="游戏数据" class="md-tabs__link">
+          游戏数据
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../product/" title="运营" class="md-tabs__link">
+          运营
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="微信应用文档" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    微信应用文档
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/wxdocs" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      wxdocs
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="介绍" class="md-nav__link">
+      介绍
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../design/" title="设计" class="md-nav__link">
+      设计
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      程序指南
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        程序指南
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduce/access-guide/" title="接入指南" class="md-nav__link">
+      接入指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduce/custom/" title="客服功能" class="md-nav__link">
+      客服功能
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduce/qrcode/" title="扫码打开" class="md-nav__link">
+      扫码打开
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../introduce/plugin/" title="插件接入" class="md-nav__link">
+      插件接入
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      程序开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        程序开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      简易教程
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        简易教程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1-1" type="checkbox" id="nav-4-1-1">
+    
+    <label class="md-nav__link" for="nav-4-1-1">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-1-1">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/quickstart/" title="起步" class="md-nav__link">
+      起步
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/file/" title="代码构成" class="md-nav__link">
+      代码构成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/framework/" title="小程序能力" class="md-nav__link">
+      小程序能力
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/role/" title="发布前准备" class="md-nav__link">
+      发布前准备
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/base/release/" title="上线" class="md-nav__link">
+      上线
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/demo/" title="体验小程序" class="md-nav__link">
+      体验小程序
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/new/" title="更新日志" class="md-nav__link">
+      更新日志
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/" title="框架" class="md-nav__link">
+      框架
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/" title="组件" class="md-nav__link">
+      组件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="概览" class="md-nav__link">
+      概览
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="界面" class="md-nav__link">
+      界面
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="快捷键" class="md-nav__link">
+      快捷键
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="代码编辑" class="md-nav__link">
+      代码编辑
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="小程序调试" class="md-nav__link">
+      小程序调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="命令行调用" class="md-nav__link">
+      命令行调用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="HTTP 调用" class="md-nav__link">
+      HTTP 调用
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="小程序开发助手" class="md-nav__link">
+      小程序开发助手
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="代码片段" class="md-nav__link">
+      代码片段
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/ext/" title="第三方平台" class="md-nav__link">
+      第三方平台
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="小程序插件开发" class="md-nav__link">
+      小程序插件开发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="云测试" class="md-nav__link">
+      云测试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="实现差异" class="md-nav__link">
+      实现差异
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="下载" class="md-nav__link">
+      下载
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/devtools/devtools/" title="历史更新日志" class="md-nav__link">
+      历史更新日志
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../app/" title="Q&A" class="md-nav__link">
+      Q&A
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      程序数据
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        程序数据
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../function/" title="功能概述" class="md-nav__link">
+      功能概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../regular/" title="常规分析" class="md-nav__link">
+      常规分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        自定义分析
+      </label>
+    
+    <a href="./" title="自定义分析" class="md-nav__link md-nav__link--active">
+      自定义分析
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="快速入门" class="md-nav__link">
+    快速入门
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="明确需求" class="md-nav__link">
+    明确需求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="定义事件" class="md-nav__link">
+    定义事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="测试和发布" class="md-nav__link">
+    测试和发布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="分析数据" class="md-nav__link">
+    分析数据
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1. 统计不同城市用户的订单量" class="md-nav__link">
+    1. 统计不同城市用户的订单量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" title="2. 商品购买流程中各个步骤的转化和流失情况" class="md-nav__link">
+    2. 商品购买流程中各个步骤的转化和流失情况
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="事件管理" class="md-nav__link">
+    事件管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="事件及其字段" class="md-nav__link">
+    事件及其字段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="事件的编辑与发布" class="md-nav__link">
+    事件的编辑与发布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="测试事件配置" class="md-nav__link">
+    测试事件配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="发布事件配置" class="md-nav__link">
+    发布事件配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" title="事件分析" class="md-nav__link">
+    事件分析
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="事件分析概述" class="md-nav__link">
+    事件分析概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="事件分析查询条件" class="md-nav__link">
+    事件分析查询条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="查看事件分析结果" class="md-nav__link">
+    查看事件分析结果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="查看事件分析记录" class="md-nav__link">
+    查看事件分析记录
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" title="漏斗分析" class="md-nav__link">
+    漏斗分析
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="漏斗分析概述" class="md-nav__link">
+    漏斗分析概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="创建漏斗" class="md-nav__link">
+    创建漏斗
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="漏斗分析查询条件" class="md-nav__link">
+    漏斗分析查询条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" title="漏斗计算规则" class="md-nav__link">
+    漏斗计算规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="查看漏斗分析结果" class="md-nav__link">
+    查看漏斗分析结果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../assistant/" title="小程序数据助手" class="md-nav__link">
+      小程序数据助手
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      游戏指南
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        游戏指南
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/introduce/" title="接入指南" class="md-nav__link">
+      接入指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/introduce/qrcode/" title="扫码打开" class="md-nav__link">
+      扫码打开
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/introduce/qcloud/" title="腾讯云支持" class="md-nav__link">
+      腾讯云支持
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      游戏开发
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        游戏开发
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1" type="checkbox" id="nav-7-1">
+    
+    <label class="md-nav__link" for="nav-7-1">
+      教程
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-1">
+        教程
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-1" type="checkbox" id="nav-7-1-1">
+    
+    <label class="md-nav__link" for="nav-7-1-1">
+      基础
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-1">
+        基础
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/" title="快速上手" class="md-nav__link">
+      快速上手
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/base/adapter/" title="Adapter" class="md-nav__link">
+      Adapter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/base/engine/" title="对引擎的支持" class="md-nav__link">
+      对引擎的支持
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/base/module/" title="模块化" class="md-nav__link">
+      模块化
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-2" type="checkbox" id="nav-7-1-2">
+    
+    <label class="md-nav__link" for="nav-7-1-2">
+      能力
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-2">
+        能力
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/ability/audio/" title="音频播放" class="md-nav__link">
+      音频播放
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/ability/file-system/" title="文件系统" class="md-nav__link">
+      文件系统
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-3" type="checkbox" id="nav-7-1-3">
+    
+    <label class="md-nav__link" for="nav-7-1-3">
+      可用性
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-3">
+        可用性
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/usability/debug/" title="调试" class="md-nav__link">
+      调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/usability/performance/" title="性能" class="md-nav__link">
+      性能
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/usability/update/" title="小游戏更新" class="md-nav__link">
+      小游戏更新
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/usability/worker/" title="多线程 Worker" class="md-nav__link">
+      多线程 Worker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-1-4" type="checkbox" id="nav-7-1-4">
+    
+    <label class="md-nav__link" for="nav-7-1-4">
+      开放能力
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-7-1-4">
+        开放能力
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/open-ability/authorize/" title="用户授权" class="md-nav__link">
+      用户授权
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/open-ability/http-signature/" title="用户登录态签名" class="md-nav__link">
+      用户登录态签名
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/open-ability/midas-signature/" title="米大师支付签名" class="md-nav__link">
+      米大师支付签名
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/open-ability/open-data/" title="关系链数据使用指南" class="md-nav__link">
+      关系链数据使用指南
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/open-ability/payment/" title="虚拟支付" class="md-nav__link">
+      虚拟支付
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/open-ability/qrcode/" title="获取二维码" class="md-nav__link">
+      获取二维码
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/open-ability/share/" title="转发" class="md-nav__link">
+      转发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/tutorial/open-ability/signature/" title="用户数据的签名验证和加解密" class="md-nav__link">
+      用户数据的签名验证和加解密
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-2" type="checkbox" id="nav-7-2">
+    
+    <label class="md-nav__link" for="nav-7-2">
+      API
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-2">
+        API
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/render/" title="渲染" class="md-nav__link">
+      渲染
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/system/" title="系统" class="md-nav__link">
+      系统
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/device/" title="设备" class="md-nav__link">
+      设备
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/file/" title="文件" class="md-nav__link">
+      文件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/location/" title="位置" class="md-nav__link">
+      位置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/network/" title="网络" class="md-nav__link">
+      网络
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/open-api/" title="开放接口" class="md-nav__link">
+      开放接口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/share/" title="转发" class="md-nav__link">
+      转发
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/debug/" title="调试" class="md-nav__link">
+      调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/storage/" title="数据缓存" class="md-nav__link">
+      数据缓存
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/ui/" title="界面" class="md-nav__link">
+      界面
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/update/" title="更新" class="md-nav__link">
+      更新
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/worker/" title="Worker" class="md-nav__link">
+      Worker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/media/" title="媒体" class="md-nav__link">
+      媒体
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/performance/" title="性能" class="md-nav__link">
+      性能
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/clearTimeout/" title="定时器" class="md-nav__link">
+      定时器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/api/midas-payment/" title="虚拟支付" class="md-nav__link">
+      虚拟支付
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/devtools/devtools/" title="工具" class="md-nav__link">
+      工具
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/dev/qcloud/qcloud/" title="腾讯云支持" class="md-nav__link">
+      腾讯云支持
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      游戏数据
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        游戏数据
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/analysis/" title="功能概述" class="md-nav__link">
+      功能概述
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/analysis/analysis/" title="常规分析" class="md-nav__link">
+      常规分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../game/analysis/assistant/" title="小游戏数据助手" class="md-nav__link">
+      小游戏数据助手
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      运营
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        运营
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="运营规范" class="md-nav__link">
+      运营规范
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="常见拒绝情形" class="md-nav__link">
+      常见拒绝情形
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="服务条款" class="md-nav__link">
+      服务条款
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="微信认证指引" class="md-nav__link">
+      微信认证指引
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../product/" title="特殊行业所需资质材料" class="md-nav__link">
+      特殊行业所需资质材料
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="快速入门" class="md-nav__link">
+    快速入门
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="明确需求" class="md-nav__link">
+    明确需求
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="定义事件" class="md-nav__link">
+    定义事件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="测试和发布" class="md-nav__link">
+    测试和发布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="分析数据" class="md-nav__link">
+    分析数据
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1. 统计不同城市用户的订单量" class="md-nav__link">
+    1. 统计不同城市用户的订单量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" title="2. 商品购买流程中各个步骤的转化和流失情况" class="md-nav__link">
+    2. 商品购买流程中各个步骤的转化和流失情况
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="事件管理" class="md-nav__link">
+    事件管理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="事件及其字段" class="md-nav__link">
+    事件及其字段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="事件的编辑与发布" class="md-nav__link">
+    事件的编辑与发布
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" title="测试事件配置" class="md-nav__link">
+    测试事件配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" title="发布事件配置" class="md-nav__link">
+    发布事件配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" title="事件分析" class="md-nav__link">
+    事件分析
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="事件分析概述" class="md-nav__link">
+    事件分析概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" title="事件分析查询条件" class="md-nav__link">
+    事件分析查询条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" title="查看事件分析结果" class="md-nav__link">
+    查看事件分析结果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" title="查看事件分析记录" class="md-nav__link">
+    查看事件分析记录
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" title="漏斗分析" class="md-nav__link">
+    漏斗分析
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="漏斗分析概述" class="md-nav__link">
+    漏斗分析概述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="创建漏斗" class="md-nav__link">
+    创建漏斗
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" title="漏斗分析查询条件" class="md-nav__link">
+    漏斗分析查询条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" title="漏斗计算规则" class="md-nav__link">
+    漏斗计算规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" title="查看漏斗分析结果" class="md-nav__link">
+    查看漏斗分析结果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">自定义分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>自定义分析支持灵活多维和近实时的用户行为分析，可以通过自定义上报，对用户在小程序内的行为做精细化跟踪，满足页面访问等标准统计以外的个性化分析需求。例如，电商类小程序通过配置自定义上报，收集数据，可以完成如下分析：</p>
+<ol>
+<li>购买商品的人，各省份、城市、年龄、性别的分布如何？不同用户群购买的商品数量、商品价格有什么差别？</li>
+<li>用户访问商品页、查看商品详情、查看评论、下单、支付、完成购买，逐步的转化率如何？不同用户群的转化是否有差异？</li>
+<li>今天参与线上活动的用户，各个时段（小时级）的活跃度如何？</li>
+</ol>
+<h2 id="_2">快速入门<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>使用小程序自定义分析，建议按以下步骤进行</p>
+<ol>
+<li>明确数据需求</li>
+<li>根据产品特性，合理定义事件，配置上报</li>
+<li>测试和发布事件配置，收集数据</li>
+<li>结合具体需求，分析数据</li>
+</ol>
+<h3 id="_3">明确需求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>例如，一个电商类小程序，可能需要分析：</p>
+<ol>
+<li>不同地区的商品订单量、支付总金额；</li>
+<li>商品购买流程中各个步骤的转化和流失情况。</li>
+</ol>
+<h3 id="_4">定义事件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>数据是以事件为模型进行存储和分析的。电商类小程序中，用户购买过程可能包括如下事件：</p>
+<ol>
+<li>查看商品</li>
+<li>查看详情</li>
+<li>加入购物车</li>
+<li>下单</li>
+<li>支付</li>
+</ol>
+<p>登录https://mp.weixin.qq.com ，进入“数据分析” – “自定义分析” - “事件管理”，点击 “新建事件”。</p>
+<p>以加入购物车事件为例，填写事件英文和中文名称：</p>
+<p>填写事件配置，定义如何收集数据：</p>
+<p>这个例子中，用一个动作上报“加入购物车”事件。</p>
+<ul>
+<li>
+<p>trigger，触发条件，click，表示点击操作触发；</p>
+</li>
+<li>
+<p>action，触发时动作，一次性上报，表示在每一次click中，收集数据并上报一条数据；</p>
+</li>
+<li>
+<p>page，触发页面，填viewProduct（viewProduct是商品详情页）；</p>
+</li>
+<li>
+<p>element， 触发元素，填.addToCart（.addToCart是一个“加入购物车”的按钮）；</p>
+</li>
+<li>
+<p>data, 事件的数据及其来源，用“字段名 字段值”来表示，其中字段值是页面上的一个变量。.</p>
+<p>这个例子中，data有四项：</p>
+<p>product_id : itemID</p>
+<p>product_name : itemName</p>
+<p>product_price : price</p>
+<p>product_category : category</p>
+<p>即：</p>
+<p>事件的product_id字段，收集viewProduct页面上page实例的data中的itemID字段；</p>
+<p>事件的product_name字段，收集viewProduct页面上page实例的data中的itemName字段；</p>
+<p>事件的product_price字段，收集viewProduct页面上page实例的data中的price字段；</p>
+<p>事件的product_category字段，收集viewProduct页面上page实例的data中的category字段；</p>
+</li>
+</ul>
+<p>以上内容表示：当用户点击viewProduct页面上的.addToCart按钮时，上报一条记录到add_to_cart事件，事件的product_id, product_name, product_price, product_category 字段， 取值分别是页面上的itemID, itemName, price, category。</p>
+<p>确定配置后，点击“检查字段”。</p>
+<p>此时会提示add_to_cart事件包含的具体字段，继续补充字段的名称、数据类型和备注信息。</p>
+<h3 id="_5">测试和发布<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>确认字段信息后，点击“保存并测试”，保存当前配置并测试上报的数据是否符合预期。</p>
+<p>选择一个开发者，点击“下一步”，事件配置将会实时同步到所选开发者的设备上。</p>
+<p>配置成功同步到设备上后，按提示在开发者的设备上打开对应小程序中进行测试操作，点击商品详情页中的“加入购物车”按钮，进行数据上报。操作完成后点击“同步结果”，可能有1-2分钟延迟。</p>
+<p>数据上报成功后，可在当前窗口查看上报详情。如果数据符合预期，认为测试成功，点击“关闭”回到事件编辑页面。</p>
+<p>点击“保存并发布”并确认操作，该事件配置正式生效，大概5分钟后，即可开始收集所有用户的数据。注意：发布后，事件已有字段的名称和数据类型不可更改，但可继续修改配置、新增字段。</p>
+<p>同理，可以定义下单、支付等其他事件并发布事件配置、收集数据。</p>
+<h3 id="_6">分析数据<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>发布事件配置、收集数据后，可以进行相应的数据分析。</p>
+<h4 id="1">1. 统计不同城市用户的订单量<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>进入“数据分析” – “自定义分析” – “事件分析”</p>
+<p>事件：选择“下单”；</p>
+<p>指标：选择“总次数”和“去重人数”，即下单操作的次数和人数，表示订单数和下单用户数；</p>
+<p>分组：选择“城市”，即按城市分别统计订单数和下单用户数；</p>
+<p>过滤：数据筛选条件，例如只统计广东省的数据，则选择省份等于广东省，也可以不选择；</p>
+<p>时间：选择时间范围以及数据的时间粒度，例如查看最近7天每天的数据。</p>
+<p>完成后点击“查询”。</p>
+<p>数据开始计算，根据数据量大小不同，可能有一定的等待时间。你可以点击“收进后台”，在当前页面进行新的查询，也可以在历史查询记录中查看之前的数据。</p>
+<p>统计完成后，当前页面将展示各个城市的下单总次数、总人数。由于分组项太多，图表仅展示部分数据，你可以设置“显示其他数据”来选择希望查看的城市和指标；详细数据将会显示全部城市的数据，可以查看或下载。</p>
+<h4 id="2">2. 商品购买流程中各个步骤的转化和流失情况<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p>进入“数据分析” – “自定义分析” – “漏斗分析”</p>
+<p>首次进入时，点击“新建漏斗”创建漏斗。</p>
+<p>填写漏斗名称，确认一个简洁清晰的名称，有利于对应分析。</p>
+<p>设置漏斗步骤，每个步骤对应一个事件，本漏斗中设置步骤是查看商品-查看详情-加入购物车-下单-支付。每个步骤确认后点击右下角“添加步骤”继续添加下一个步骤。</p>
+<p>完成后回到数据查询页，设置查询条件。</p>
+<p>漏斗名称：选择已创建的“购买转化漏斗”；</p>
+<p>分组：选择需要分组统计的字段，也可以不选择，不选择时将统计总体；</p>
+<p>过滤：数据筛选条件，例如只统计广东省的数据，则选择省份等于广东省，也可以不选择；</p>
+<p>时间：选择时间范围，将统计此范围内总体漏斗转化情况，此处选择12.22-12.31。</p>
+<p>点击查询，查看数据结果。</p>
+<p>图表显示，12.22-12.31内，查看商品的人数共985人。这些用户到后面每个步骤的转化率依次为93.50%，84.04%，74.68%，65.92%.详情数据会展示了每个步骤的具体数据，可以下载查看。</p>
+<p>进一步，可以更新查询条件，例如设置分组条件，选择“城市”字段，可以查看各城市的详细漏斗数据；设置过滤条件，可只查看部分选定用户的漏斗转化数据；拉长时间范围，可以看这些查看商品的用户在更长时间内的转化和流失情况。</p>
+<p>以上简单介绍了如何使用自定义分析功能分析用户购买行为，下面将介绍自定义分析功能详情。</p>
+<h2 id="_7">事件管理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">事件及其字段<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>事件是自定义分析进行用户行为数据收集和分析的模型。</p>
+<p>一个事件的数据都是由多个字段组成，字段包括系统默认字段和用户自定义字段。</p>
+<p>系统默认字段由系统收集数据，如用户地域、设备类型等；而用户自定义字段则是用户指定并收集数据。</p>
+<p>字段的定义是全局的，即事件A使用了字段a，事件B也使用了字段a，a在事件A和B中的定义及描述是一致的。</p>
+<p>在“数据分析”-“自定义分析”-“事件管理”页面可以查看系统默认字段及已有的用户定义字段。</p>
+<p>目前，字段类型支持32位整数型及字符型。</p>
+<h3 id="_9">事件的编辑与发布<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>可以通过新增事件创建一个事件，修改事件来编辑一个事件，事件只有发布之后，才在收集和分析数据时正式生效。</p>
+<p>“新增事件”可以增加新的事件。</p>
+<p>“查看发布版”可以看到这个事件目前正式发布的版本。</p>
+<p>“修改”可以编辑这个事件。
+新增/修改事件</p>
+<p>点击“修改”编辑已有事件，进入修改事件页面。</p>
+<p>或者点击“新建事件”创建事件。</p>
+<p>新增事件时，需要填写事件的英文名称和中文名称。</p>
+<p>英文名称可由小写字母、下划线、数字组成，并以小写字母开头，长度为32字以内，并且不能跟已有的事件的英文名称相同；中文名称在32字符以内，不能跟已有的事件的中文名称相同。</p>
+<p>编辑事件，首先需要编辑这个事件的配置，即如何收集数据，配置的具体细节见事件上报配置说明</p>
+<p>如图，表示在view_product事件中，将使用product_id, product_name, product_price, product_category, product_producer这些字段，收集页面上的信息，如果这些字段之前没有被view_product事件使用过，那么将添加到事件里。</p>
+<p>编辑事件配置后，点击“检查字段”，会检查上报的配置里指定了哪些字段，是否需要添加到事件里。</p>
+<p>如图，这个例子中五个字段对于事件来说还未发布使用过，都是新增字段。其中，product_category，product_id,product_name, product_price 在其他事件里定义过了，其类型和含义都是确定的（如前面所说，字段的定义是全局的），而product_producer没有定义过，需要补充信息。</p>
+<p>详细说明参见事件字段说明</p>
+<p>补充字段定义后，可以点击“保存”，将本次修改保存下来。</p>
+<p>“保存并测试”，将保存当前配置并进入测试流程，可以检查数据上报是否符合预期，参见【事件测试流程】。</p>
+<p>“保存并发布”，将保存当前配置并发布，可以正式收集和分析用户行为数据。
+重置为线上版本</p>
+<p>修改事件配置后，如果不符合实际需求，可以点击“重置为线上版本”撤销修改。</p>
+<p>注意，该操作不会自动保存，“重置为线上版本”后需要再点击“保存”。
+事件上报方式</p>
+<p>收集事件数据，可以通过事件上报配置和API上报两种方式。</p>
+<p>一个事件同一时间只能选择一种方式进行上报。
+事件上报配置说明</p>
+<p>每个事件都需要指定收集数据的方式，这个是通过事件上报配置来管理的。</p>
+<p>事件上报配置的每一项都是一个动作，可以由一到多个动作组成。</p>
+<p>动作的各项含义如下：</p>
+<p>trigger，触发条件:</p>
+<div class="codehilite"><pre><span></span>click 点击时触发，必须指定page和element
+
+enterPage 进入页面时触发，包括新开、后退、切换到前台都属于进入页面，必须指定page
+
+leavePage 离开页面时触发，包括离开、切换到后台都属于离开页面，必须指定page
+
+pageLoad 新开页面时触发，即第一次进入页面，必须指定page
+
+pageUnload 回收页面时触发，必须指定page
+
+switchTab 调用switchTab接口切换页面时触发，必须指定page
+
+pullDownRefresh 下拉刷新时触发，必须指定page
+
+launch 加载小程序时触发
+
+background 切换到后台触发
+
+foreground 切换到前台触发
+
+share 右上角菜单分享时触发
+</pre></div>
+
+
+<p>action trigger发生时的动作，默认会收集数据，包括系统默认数据和用户自定义数据（data中定义）。收集数据可以一次性上报，也可以分多步收集，故有如下定义</p>
+<p>一次性上报：一次触发上报一条数据记录；</p>
+<p>分步骤上报：</p>
+<div class="codehilite"><pre><span></span>空　只收集数据；
+
+start 初始化并收集数据；
+
+report 收集数据并上报事件数据
+</pre></div>
+
+
+<p>注：每次report之前必须有start操作，未经过start操作不会上报。</p>
+<p>对于一个动作，如果设置了一次性上报，且指定了click触发条件，则时序如下：</p>
+<div class="codehilite"><pre><span></span>click event -&amp;gt; start -&amp;gt; 收集数据 -&amp;gt;report
+</pre></div>
+
+
+<p>page 触发的页面, 如pages/index/index, pages/list/list，此规则与小程序app.json的pages字段保持一致， 如果需要任意页面触发，则填写ANY_PAGE。</p>
+<p>element 触发的元素，支持一层级的css的id和class选择器，即必须以’.’或者’#’开头</p>
+<p>data 收集的自定义数据，为0到多项， 每一项都是以 “字段名 字段值”的方式；如果不填，则只收集系统数据。</p>
+<div class="codehilite"><pre><span></span>字段名：事件里的字段名
+
+字段值：事件里这个字段的数据值，可收集小程序中的变量，规则如下：
+
+    填写的变量名，默认从page实例的data字段中获取
+
+    若想收集由list变量渲染的列表中的某一项数据，则可用list[].*表示，这里会根据当前填写的element（只能是class）得到的NodeList的第几个来决定数组下标。
+
+    若列表是二维的，则可用list[][].*表示，这里element需填写两个class（空格隔开）分别表示父列表与子列表。
+
+    若想取得数组的下标，则可用list[].$INDEX表示
+
+    若想取得wxml中data-系列属性的值，则可用`$DATASET.`表示
+
+    若想取得app实例的数据，则可用$APP.*表示，只支持获取基本类型的数据，如number、string、boolean。
+</pre></div>
+
+
+<p>除此之外，还可以填写一些提供的系统属性，以“$”开头，目前支持以下属性：</p>
+<div class="codehilite"><pre><span></span>$PAGE_TIME 用户从进入本页面到当前的时间(触发action的时间点)
+
+$APP_TIME 用户进入小程序到当前的时间(触发action的时间点)
+
+$CURRENT_PAGE 当前用户所在的页面
+
+$LAST_PAGE 上一页
+</pre></div>
+
+
+<p>注：data可以为空，为空时该事件上报仅收集系统默认字段的数据</p>
+<p>如前文，我们定义了事件view_product(查看商品), 有如下字段</p>
+<div class="codehilite"><pre><span></span>product_id, product_name, product_category, product_price, product_producer
+</pre></div>
+
+
+<p>在viewList页面点击viewProduct按钮时上报</p>
+<p>如果数据需要跨多个页面收集，那么就需要多个动作来完成上报了，比如下面的例子，在viewList页面收集到product_id, product_name, product_category的数据，然后进入viewProduct页面时收集到product_price的数据，并上报。</p>
+<p>在viewList页面和viewDetail页面，都有加入购物车按钮.addToCart，都需要上报数据到“加入购物车”事件，例子如下：</p>
+<p>使用API进行上报</p>
+<p>某些情况下，事件上报配置的方式可能无法满足上报的要求，可以使用小程序API的方式进行上报。</p>
+<p>在事件修改页面选择”API上报“</p>
+<p>根据需要增加字段。</p>
+<p>确认无误后，即可保存进行下一步操作。</p>
+<p>在代码中使用API进行上报，详见 wx.reportAnalytics</p>
+<p>点击"生成代码"生成API上报示例代码。</p>
+<p>生成的代码，整数型字段默认为0，字符型字段默认为""，按需要修改即可。</p>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>“保存并测试”时，选定的测试者需要用开发版小程序进行上报
+开发工具暂时未支持自定义分析数据上报</p>
+</div>
+<p>事件字段说明</p>
+<p>填写事件上报配置时，需要检查字段。如下图：</p>
+<p>“新增字段”表示需要添加到事件里的新字段</p>
+<p>“已有字段”表示是事件已发布版已经有的字段。</p>
+<p>对于已有字段，只能修改字段备注，在发布后将会正式生效。</p>
+<p>对于新增字段，如下图例子，product_id在其他事件里已经定义过，添加到本事件中，不能修改其定义；而product_producer为新定义的字段，需要补充定义。填写中文名称和字段备注，用于展示；填写字段类型，用户数据上报及数据处理。</p>
+<p>新增和已有字段可能有以下状态，需要关注，页面内会有小图标给出提示：</p>
+<ol>
+<li>新增字段在其他事件中已定义过
+  product_price是新增字段，但已在其他事件中定义过。检查字段后会提示：字段已被定义，应保持一致，不可修改。</li>
+<li>已有字段从事件配置中移除
+  如下图，如果修改了事件配置时，将事件配置data里已有的一个字段删去：
+  检查字段时会提示：该字段在当前配置中未使用。这代表product_name不再收集数据。</li>
+<li>已停用字段重新使用</li>
+</ol>
+<p>如果重新在事件配置中的data加入之前已移除的product_name字段，那么会继续使用product_name收集数据。</p>
+<p>检查字段后会提示：该字段已定义过，在当前配置中重新使用，请注意数据一致性。这代表product_name将重新开始收集数据。</p>
+<p>需要特别注意此时product_name的意义跟以前是否一致，如果不一致，建议用新的字段，否则product_name的历史数据跟之后上报的数据含义冲突，对数据分析造成干扰。</p>
+<p>字段类型</p>
+<p>字段的类型目前分为两种：整数形和字符串</p>
+<p>其中，整数型为32位int；</p>
+<p>对于整数型的数据，如果上报时带了小数点，则会默认截取小数点前的数字；如果是非数字的类型，则最终会上报0。</p>
+<p>字段的定义是全局的，定义了字段以后，其他事件也可以使用添加这个字段到事件里。</p>
+<h3 id="_10">测试事件配置<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>确认字段信息后，点击“保存并测试”，保存当前配置并测试上报的数据是否符合预期。</p>
+<p>选择一个开发者，点击“下一步”，事件配置将会实时同步到所选开发者的设备上。</p>
+<p>配置成功同步到设备上后，按提示在开发者的设备上打开对应小程序中进行测试操作，点击商品详情页中的“加入购物车”按钮，进行数据上报。操作完成后点击“同步结果”，可能有1-2分钟延迟。</p>
+<p>如果未获取到数据，请检查客户端版本是否为 6.5.4 以上，操作是否正确，以及是否已超过等待时间（通常为1-2分钟），客户端是否有上报日志，确认没问题可重新“同步结果”。</p>
+<p>检查上报日志时，可进入开发版的小程序，点击右上角，打开调试，重新进入后点击"vConsole"按钮查看日志</p>
+<p>启动小程序时会有：</p>
+<div class="codehilite"><pre><span></span>[自定义分析] 配置拉取成功
+</pre></div>
+
+
+<p>后台管理页面同步配置时有：</p>
+<div class="codehilite"><pre><span></span>[自定义分析] 收到最新配置
+</pre></div>
+
+
+<p>小程序成功上报时有：</p>
+<div class="codehilite"><pre><span></span>[自定义分析] 上报成功
+</pre></div>
+
+
+<p>数据上报成功后，可在当前窗口查看上报详情。如果数据符合预期，认为测试成功，点击“关闭”回到事件编辑页面。</p>
+<h3 id="_11">发布事件配置<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>点击“保存并发布”并确认操作，该事件配置正式生效，大概5-10分钟后，即可开始收集所有用户的数据。注意：发布后，事件已有字段的名称和数据类型不可更改，但可继续修改配置、新增字段。</p>
+<h2 id="_12">事件分析<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">事件分析概述<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>事件，是进行数据收集和分析的模型，对应用户在小程序内的行为。例如：注册、查看商品、下单、支付等。</p>
+<p>事件分析，是指基于事件的指标统计、属性分组、条件筛选等功能的查询分析。例如，分析小程序的注册量、查看商品人数、下单次数、支付金额并区分用户群对比等。</p>
+<p>进行事件分析前，需要先在“事件管理”中定义事件并配置上报、收集数据。具体参见【事件管理】说明。</p>
+<p>进行事件分析时，可以灵活选择查询条件并查看详细数据结果。</p>
+<h3 id="_14">事件分析查询条件<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>选择事件</p>
+<p>在事件下拉列表中，将展示出所有已经在事件管理中创建的事件，每次事件分析只能选择一个事件。
+选择指标</p>
+<p>在指标下拉列表中，选择需要分析的默认或自定义指标。每次分析最多可以选择5个指标，并且不能重复。你可以通过右侧的“+”添加指标。其中：</p>
+<p>每个事件都可以统计如下指标，可以直接选择：</p>
+<div class="codehilite"><pre><span></span>总次数：事件的触发次数
+
+去重人数：触发该事件的去重用户数（以openid判断）
+
+人均次数：每个用户触发该事件次数的平均值，即总次数/去重人数
+</pre></div>
+
+
+<p>也可以基于事件管理中的自定义属性字段，选择想要分析的其他指标。你需要从下拉列表中分别选择属性字段和需要计算的指标。</p>
+<p>对于不同数据类型的字段，有对应不同的指标可供选择。具体的对应关系如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段类型</th>
+<th>支持的指标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符型</td>
+<td>去重数(count(distinct))</td>
+</tr>
+<tr>
+<td>整数型</td>
+<td>总和 (sum)、 最大值(max) 、 最小值(min) 、 平均值(avg) 、 人均值(sum /count(distinct openId))</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span>例如，商品价格为整数型，指标可以选择“商品价格的总和”。
+</pre></div>
+
+
+<p>选择分组</p>
+<p>在分组下拉列表中，可以选择查看数据的分组维度，包括系统默认属性和自定义属性。每次分析最多可以选择5个分组，并且不能重复。你可以通过右侧的“+”添加分组。</p>
+<p>例如指标选择总次数，分组选择“性别”，将分别统计男性用户、女性用户的事件触发总次数。</p>
+<p>需要注意的是：当分组过多时，仅能显示部分数据，请合理设置分组。
+设置过滤条件</p>
+<p>分析时，可以选择或输入你想要过滤的条件。每次分析最多可以选择5个过滤条件。所有条件之间的关系必须全部为“并且”，或全部为“或者”，前者表示满足所有条件，后者表示满足至少一项条件。当切换其中一处的关系时，所有其他关系也会随之切换。你可以通过下方的“+”添加过滤条件。</p>
+<p>对于不同类型的字段，有对应不同的过滤条件，具体的对应关系如下：</p>
+<table>
+<thead>
+<tr>
+<th>属性类型</th>
+<th>支持的过滤条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统默认字段</td>
+<td>等于/不等于</td>
+</tr>
+<tr>
+<td>字符型自定义字段</td>
+<td>等于/不等于/有值/没值/为空值/不为空值</td>
+</tr>
+<tr>
+<td>整数型自定义字段</td>
+<td>大于/小于/大于等于/小于等于/等于/不等于/有值/没值</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span>例如：选择“国家等于中国”，“商品价格大于10”，“商品种类等于A”，表示只统计中国价格大于10的A商品的数据。
+</pre></div>
+
+
+<p>选择时间范围</p>
+<p>选择查询分析的时间范围，支持今天、昨天、最近7天以及自定义时间范围。当天的数据也可以及时查看。
+选择时间粒度</p>
+<p>可以选择查询数据的时间粒度，包括按小时、按天，按总体。选择总体时，将展示所选时间范围内的汇总数据。</p>
+<h3 id="_15">查看事件分析结果<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>数据计算可能需要一定时间，你可以选择在当前页面等待，或点击“历史查询记录”查看之前的数据，或点击“收进后台”，开始新的查询。
+查看图表</p>
+<p>当查询条件过于复杂，指标和分组过多时，图表默认展示数值最大的10个分组和指标。可以点击图例，选择是否显示该分组和指标。</p>
+<p>如果默认数据中没有希望查看的数据，可以通过“显示其他数据”，来选择你希望查看的分组和指标，并进行对比。最多可选择10项。
+查看详情</p>
+<p>详细数据将分页展示所有分组和指标的详情。其中，第一列为时间，其他列分别为分组、指标。可以下载数据结果，以便进行进一步分析。</p>
+<h3 id="_16">查看事件分析记录<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>在数据查询页，或查询等待过程中，你可以进入历史查询记录页查看已进行过的数据查询。所有历史查询记录默认保存一段时间。</p>
+<p>查询名称：显示查询的事件名和指标名；</p>
+<p>查询时间：执行查询的具体时间；</p>
+<p>数据时间：查询数据的时间范围；</p>
+<p>状态：查询任务的状态，可能为等待查询、查询中、查询成功、查询失败。最多同时进行3项查询，查询任务过多时，会进入等待状态；</p>
+<p>操作：可以通过“查看详情”，查看该查询任务的图表和详细数据。</p>
+<h2 id="_17">漏斗分析<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<h3 id="_18">漏斗分析概述<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>漏斗分析，是指将多个事件串联起来，对每个步骤中用户转化与流失进行的分析。例如：购买过程可能包括以下步骤（一个步骤对应一个事件）：</p>
+<div class="codehilite"><pre><span></span>查看商品
+
+查看详情
+
+加入购物车
+
+下单
+支付
+</pre></div>
+
+
+<p>这些步骤可以设置为一个漏斗，分析过程中的转化与流失情况。</p>
+<p>进行漏斗分析前，需要先在“事件管理”中定义事件并配置上报、收集数据。参见【事件管理】说明。</p>
+<p>进行事件分析时，可以灵活选择查询条件并查看详细数据结果。结合过滤、分组等功能进行深入的对比和分析。</p>
+<h3 id="_19">创建漏斗<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>首次进入漏斗分析，需要先创建漏斗。
+漏斗步骤</p>
+<p>创建漏斗时，每一步对应一个事件，在一个漏斗中，一个事件只能出现一次。
+过滤条件</p>
+<p>在漏斗的每一个事件中，可以针对事件本身的自定义字段设置过滤条件。这里提供的过滤规则与事件分析中的设置过滤条件规则相同。例如，希望分析A类商品的购买转化数据，可以设置过滤条件“商品种类为A”。</p>
+<h3 id="_20">漏斗分析查询条件<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p>选择漏斗</p>
+<p>在漏斗名称下拉列表中，选择想要分析的漏斗。每次分析只能选择一个漏斗。
+选择分组</p>
+<p>在分组下拉列表中，将展示出所有我们内部定义的属性，选择想要分析的分组属性。每次分析最多只能选择1个分组。不选时，将统计总体数据。
+设置过滤条件</p>
+<p>分析时，可以选择或输入你想要过滤的条件。每次分析最多可以选择5个过滤条件。所有条件之间的关系必须全部为“并且”，或全部为“或者”，前者表示满足所有条件，后者表示满足至少一项条件。当切换其中一处的关系时，所有其他关系也会随之切换。你可以通过下方的“+”添加过滤条件。</p>
+<div class="codehilite"><pre><span></span>例如：选择城市为“北京”、或“上海”、或“广州”、或“深圳”，将会同时统计这四个城市的数据。
+</pre></div>
+
+
+<p>选择时间范围</p>
+<p>选择查询分析的时间范围，支持今天、昨天、最近7天以及自定义时间范围。当天的数据也可以及时查看。</p>
+<h3 id="_21">漏斗计算规则<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p>漏斗分析计算在选定时间范围内、过滤和分组条件下，漏斗中总体或每个分组的用户依次完成第一个到最后一个步骤的人数。</p>
+<p>步骤过滤条件：每个步骤中设置的过滤条件，对该步骤生效。例如“支付”步骤，设置过滤条件为“支付金额大于500”，则“支付”及其后面的步骤，都只包括支付步骤金额大于500的用户。</p>
+<p>漏斗过滤条件：对漏斗中的每个步骤生效。例如设置过滤条件为“省份等于广东”，所有步骤都只计算省份属性为广东的人数。</p>
+<p>分组条件：初期提供按用户属性和系统属性分组，对漏斗中的每个步骤生效。例如分组为“城市”，那么“广州”分组中的漏斗数据，每个步骤都只计算城市为广州的用户。</p>
+<p>时间范围：部分或完整漏斗发生的时间范围，至少第一个步骤在该时间范围内。</p>
+<div class="codehilite"><pre><span></span>例如，漏斗包含A-B-C三个步骤，图表显示的人数及转化率表示：
+</pre></div>
+
+
+<p>第1步人数：在选定时间范围内，满足分组和过滤条件，完成A的人数；</p>
+<p>第2步人数：在选定时间范围内，满足分组和过滤条件，按顺序完成过A-B的人数；如果A-B步骤之间发生其他操作，例如A-C-B，满足A-B顺序，依然计算在内；</p>
+<p>第3步人数：在选定时间范围内，满足分组和过滤条件，按顺序完成过A-B-C的人数；如果A-B-C步骤之间包括其他步骤，例如A-D-B-B-C，满足A-B-C顺序，依然计算在内；</p>
+<p>转化率：每个步骤的人数与上一步人数的比值。</p>
+<h3 id="_22">查看漏斗分析结果<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<p>查看图表</p>
+<p>图表将展示漏斗中每个步骤的总人数，及相对前一个步骤的转化率。
+查看详情</p>
+<p>详细数据中将展示漏斗每个步骤的人数。如果已设置分组，会显示多个分组。可以下载数据结果，以便进行进一步分析。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../regular/" title="常规分析" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                常规分析
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../assistant/" title="小程序数据助手" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                小程序数据助手
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            @2018 wxdocs.github.io
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="http://wohugb.github.io" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/wohugb" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/wohugb" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/wohugb" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
