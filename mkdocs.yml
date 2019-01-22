@@ -1,9 +1,8 @@
-
 site_name: 微信应用文档
 site_description: 微信应用文档
 site_author: Nosy
 
-copyright: '@2018 wxdocs.github.io'
+copyright: "@2018 wxdocs.github.io"
 
 repo_name: wxdocs
 repo_url: https://github.com/wxdocs
@@ -30,7 +29,7 @@ theme:
   extra_css: [assets/stylesheets/extra.css]
 extra:
   search:
-    language: 'jp'
+    language: "jp"
   social:
     - type: globe
       link: http://wohugb.github.io
@@ -52,106 +51,105 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.details
 
-pages:
+nav:
   - 介绍: index.md
   - 设计: design/index.md
   - 程序指南:
-    - 接入指南: introduce/access-guide.md
-    - 客服功能: introduce/custom.md
-    - 扫码打开: introduce/qrcode.md
-    - 插件接入: introduce/plugin.md
+      - 接入指南: introduce/access-guide.md
+      - 客服功能: introduce/custom.md
+      - 扫码打开: introduce/qrcode.md
+      - 插件接入: introduce/plugin.md
   - 程序开发:
-    - 简易教程:
-      - 基础:
-        - 起步: app/base/quickstart.md
-        - 代码构成: app/base/file.md
-        - 小程序能力: app/base/framework.md
-        - 发布前准备: app/base/role.md
-        - 上线: app/base/release.md
-      - 体验小程序: app/demo.md
-      - 更新日志: app/new.md
-    - 框架: app/index.md
-    - 组件: app/index.md
-    - API: app/index.md
-    - 工具:
-      - 概览: app/devtools/devtools.md
-      - 界面: app/devtools/devtools.md
-      - 快捷键: app/devtools/devtools.md
-      - 代码编辑: app/devtools/devtools.md
-      - 小程序调试: app/devtools/devtools.md
-      - 命令行调用: app/devtools/devtools.md
-      - HTTP 调用: app/devtools/devtools.md
-      - 小程序开发助手: app/devtools/devtools.md
-      - 代码片段: app/devtools/devtools.md
-      - 第三方平台: app/devtools/ext.md
-      - 小程序插件开发: app/devtools/devtools.md
-      - 云测试: app/devtools/devtools.md
-      - 实现差异: app/devtools/devtools.md
-      - 下载: app/devtools/devtools.md
-      - 历史更新日志: app/devtools/devtools.md
-    - Q&A: app/index.md
+      - 简易教程:
+          - 基础:
+              - 起步: app/base/quickstart.md
+              - 代码构成: app/base/file.md
+              - 小程序能力: app/base/framework.md
+              - 发布前准备: app/base/role.md
+              - 上线: app/base/release.md
+          - 体验小程序: app/demo.md
+          - 更新日志: app/new.md
+      - 框架: app/index.md
+      - 组件: app/index.md
+      - API: app/index.md
+      - 工具:
+          - 概览: app/devtools/devtools.md
+          - 界面: app/devtools/devtools.md
+          - 快捷键: app/devtools/devtools.md
+          - 代码编辑: app/devtools/devtools.md
+          - 小程序调试: app/devtools/devtools.md
+          - 命令行调用: app/devtools/devtools.md
+          - HTTP 调用: app/devtools/devtools.md
+          - 小程序开发助手: app/devtools/devtools.md
+          - 代码片段: app/devtools/devtools.md
+          - 第三方平台: app/devtools/ext.md
+          - 小程序插件开发: app/devtools/devtools.md
+          - 云测试: app/devtools/devtools.md
+          - 实现差异: app/devtools/devtools.md
+          - 下载: app/devtools/devtools.md
+          - 历史更新日志: app/devtools/devtools.md
+      - Q&A: app/index.md
   - 程序数据:
-    - 功能概述: analysis/function.md
-    - 常规分析: analysis/regular.md
-    - 自定义分析: analysis/custom.md
-    - 小程序数据助手: analysis/assistant.md
-
+      - 功能概述: analysis/function.md
+      - 常规分析: analysis/regular.md
+      - 自定义分析: analysis/custom.md
+      - 小程序数据助手: analysis/assistant.md
   - 游戏指南:
-    - 接入指南: game/introduce/index.md
-    - 扫码打开: game/introduce/qrcode.md
-    - 腾讯云支持: game/introduce/qcloud.md
+      - 接入指南: game/introduce/index.md
+      - 扫码打开: game/introduce/qrcode.md
+      - 腾讯云支持: game/introduce/qcloud.md
   - 游戏开发:
-    - 教程:
-      - 基础:
-        - 快速上手: game/dev/index.md
-        - Adapter: game/dev/tutorial/base/adapter.md
-        - 对引擎的支持: game/dev/tutorial/base/engine.md
-        - 模块化: game/dev/tutorial/base/module.md
-      - 能力:
-        - 音频播放: game/dev/tutorial/ability/audio.md
-        - 文件系统: game/dev/tutorial/ability/file-system.md
-      - 可用性:
-        - 调试: game/dev/tutorial/usability/debug.md
-        - 性能: game/dev/tutorial/usability/performance.md
-        - 小游戏更新: game/dev/tutorial/usability/update.md
-        - 多线程 Worker: game/dev/tutorial/usability/worker.md
-      - 开放能力:
-        - 用户授权: game/dev/tutorial/open-ability/authorize.md
-        - 用户登录态签名: game/dev/tutorial/open-ability/http-signature.md
-        - 米大师支付签名: game/dev/tutorial/open-ability/midas-signature.md
-        - 关系链数据使用指南: game/dev/tutorial/open-ability/open-data.md
-        - 虚拟支付: game/dev/tutorial/open-ability/payment.md
-        - 获取二维码: game/dev/tutorial/open-ability/qrcode.md
-        - 转发: game/dev/tutorial/open-ability/share.md
-        - 用户数据的签名验证和加解密: game/dev/tutorial/open-ability/signature.md
-    - API:
-      - 渲染: game/dev/api/render.md
-      - 系统: game/dev/api/system.md
-      - 设备: game/dev/api/device.md
-      - 文件: game/dev/api/file.md
-      - 位置: game/dev/api/location.md
-      - 网络: game/dev/api/network.md
-      - 开放接口: game/dev/api/open-api.md
-      - 转发: game/dev/api/share.md
-      - 调试: game/dev/api/debug.md
-      - 数据缓存: game/dev/api/storage.md
-      - 界面: game/dev/api/ui.md
-      - 更新: game/dev/api/update.md
-      - Worker: game/dev/api/worker.md
-      - 媒体: game/dev/api/media.md
-      - 性能: game/dev/api/performance.md
-      - 定时器: game/dev/api/clearTimeout.md
-      - 虚拟支付: game/dev/api/midas-payment.md
-    - 工具: game/dev/devtools/devtools.md
-    - 腾讯云支持: game/dev/qcloud/qcloud.md
+      - 教程:
+          - 基础:
+              - 快速上手: game/dev/index.md
+              - Adapter: game/dev/tutorial/base/adapter.md
+              - 对引擎的支持: game/dev/tutorial/base/engine.md
+              - 模块化: game/dev/tutorial/base/module.md
+          - 能力:
+              - 音频播放: game/dev/tutorial/ability/audio.md
+              - 文件系统: game/dev/tutorial/ability/file-system.md
+          - 可用性:
+              - 调试: game/dev/tutorial/usability/debug.md
+              - 性能: game/dev/tutorial/usability/performance.md
+              - 小游戏更新: game/dev/tutorial/usability/update.md
+              - 多线程 Worker: game/dev/tutorial/usability/worker.md
+          - 开放能力:
+              - 用户授权: game/dev/tutorial/open-ability/authorize.md
+              - 用户登录态签名: game/dev/tutorial/open-ability/http-signature.md
+              - 米大师支付签名: game/dev/tutorial/open-ability/midas-signature.md
+              - 关系链数据使用指南: game/dev/tutorial/open-ability/open-data.md
+              - 虚拟支付: game/dev/tutorial/open-ability/payment.md
+              - 获取二维码: game/dev/tutorial/open-ability/qrcode.md
+              - 转发: game/dev/tutorial/open-ability/share.md
+              - 用户数据的签名验证和加解密: game/dev/tutorial/open-ability/signature.md
+      - API:
+          - 渲染: game/dev/api/render.md
+          - 系统: game/dev/api/system.md
+          - 设备: game/dev/api/device.md
+          - 文件: game/dev/api/file.md
+          - 位置: game/dev/api/location.md
+          - 网络: game/dev/api/network.md
+          - 开放接口: game/dev/api/open-api.md
+          - 转发: game/dev/api/share.md
+          - 调试: game/dev/api/debug.md
+          - 数据缓存: game/dev/api/storage.md
+          - 界面: game/dev/api/ui.md
+          - 更新: game/dev/api/update.md
+          - Worker: game/dev/api/worker.md
+          - 媒体: game/dev/api/media.md
+          - 性能: game/dev/api/performance.md
+          - 定时器: game/dev/api/clearTimeout.md
+          - 虚拟支付: game/dev/api/midas-payment.md
+      - 工具: game/dev/devtools/devtools.md
+      - 腾讯云支持: game/dev/qcloud/qcloud.md
   - 游戏数据:
-    - 功能概述: game/analysis/index.md
-    - 常规分析: game/analysis/analysis.md
-    - 小游戏数据助手: game/analysis/assistant.md
+      - 功能概述: game/analysis/index.md
+      - 常规分析: game/analysis/analysis.md
+      - 小游戏数据助手: game/analysis/assistant.md
 
   - 运营:
-    - 运营规范: product/index.md
-    - 常见拒绝情形: product/index.md
-    - 服务条款: product/index.md
-    - 微信认证指引: product/index.md
-    - 特殊行业所需资质材料: product/index.md
+      - 运营规范: product/index.md
+      - 常见拒绝情形: product/index.md
+      - 服务条款: product/index.md
+      - 微信认证指引: product/index.md
+      - 特殊行业所需资质材料: product/index.md
