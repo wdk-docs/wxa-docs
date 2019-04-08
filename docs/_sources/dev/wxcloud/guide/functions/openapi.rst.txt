@@ -16,11 +16,14 @@
 3. 为云函数声明所需调用的接口
 接着，需要配置云调用权限，每个云函数需要声明其会使用到的接口，否则无法调用，声明的方法是在云函数目录下的 config.json（如无需新建）配置文件的 permissions.openapi 字段中增加要调用的接口名，permissions.openapi 是个字符串数组字段，值必须为所需调用的服务端接口名称。在每次使用微信开发者工具上传云函数时均会根据配置更新权限。以下是一个示例的声明了使用发送模板消息接口的配置文件：
 
-{
-  "permissions": {
-    "openapi": ["templateMessage.send"]
+.. code-block::
+
+  {
+    "permissions": {
+      "openapi": ["templateMessage.send"]
+    }
   }
-}
+
 4. 在云函数中使用云调用
 首先云函数中需要使用版本号至少 0.4.0 的 wx-server-sdk，建议 wx-server-sdk 始终保持最新，保证云函数目录下的 package.json 的 wx-server-sdk 字段为 latest，如本地安装依赖，请执行 npm install --save wx-server-sdk@latest。
 
@@ -28,37 +31,39 @@
 
 如需可直接运行的示例，请在 IDE 中创建一个云开发快速启动模板的项目，其中有包含发送模板消息的云调用的示例
 
-const cloud = require('wx-server-sdk')
-cloud.init()
-exports.main = async (event, context) => {
-  try {
-    const result = await cloud.openapi.templateMessage.send({
-      touser: cloud.getWXContext().OPENID, // 通过 getWXContext 获取 OPENID
-      page: 'index',
-      data: {
-        keyword1: {
-          value: '339208499'
+.. code-block::
+
+  const cloud = require('wx-server-sdk')
+  cloud.init()
+  exports.main = async (event, context) => {
+    try {
+      const result = await cloud.openapi.templateMessage.send({
+        touser: cloud.getWXContext().OPENID, // 通过 getWXContext 获取 OPENID
+        page: 'index',
+        data: {
+          keyword1: {
+            value: '339208499'
+          },
+          keyword2: {
+            value: '2015年01月05日 12:30'
+          },
+          keyword3: {
+            value: '腾讯微信总部'
+          },
+          keyword4: {
+            value: '广州市海珠区新港中路397号'
+          }
         },
-        keyword2: {
-          value: '2015年01月05日 12:30'
-        },
-        keyword3: {
-          value: '腾讯微信总部'
-        },
-        keyword4: {
-          value: '广州市海珠区新港中路397号'
-        }
-      },
-      templateId: 'TEMPLATE_ID',
-      formId: 'FORMID',
-      emphasisKeyword: 'keyword1.DATA'
-    })
-    // result 结构
-    // { errCode: 0, errMsg: 'openapi.templateMessage.send:ok' }
-    return result
-  } catch (err) {
-    // 错误处理
-    // err.errCode !== 0
-    throw err
+        templateId: 'TEMPLATE_ID',
+        formId: 'FORMID',
+        emphasisKeyword: 'keyword1.DATA'
+      })
+      // result 结构
+      // { errCode: 0, errMsg: 'openapi.templateMessage.send:ok' }
+      return result
+    } catch (err) {
+      // 错误处理
+      // err.errCode !== 0
+      throw err
+    }
   }
-}

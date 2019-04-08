@@ -199,69 +199,53 @@
 在支持云调用的接口文档中，会分别列出 HTTPS 调用的文档及云调用的文档，云调用文档同 HTTPS 调用文档一样包含请求参数、返回值及示例。</p>
 <p>3. 为云函数声明所需调用的接口
 接着，需要配置云调用权限，每个云函数需要声明其会使用到的接口，否则无法调用，声明的方法是在云函数目录下的 config.json（如无需新建）配置文件的 permissions.openapi 字段中增加要调用的接口名，permissions.openapi 是个字符串数组字段，值必须为所需调用的服务端接口名称。在每次使用微信开发者工具上传云函数时均会根据配置更新权限。以下是一个示例的声明了使用发送模板消息接口的配置文件：</p>
-<dl>
-<dt>{</dt><dd><dl class="simple">
-<dt>“permissions”: {</dt><dd><p>“openapi”: [“templateMessage.send”]</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
-<p>}
-4. 在云函数中使用云调用
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;permissions&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;openapi&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;templateMessage.send&quot;</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>4. 在云函数中使用云调用
 首先云函数中需要使用版本号至少 0.4.0 的 wx-server-sdk，建议 wx-server-sdk 始终保持最新，保证云函数目录下的 package.json 的 wx-server-sdk 字段为 latest，如本地安装依赖，请执行 npm install –save <a class="reference external" href="mailto:wx-server-sdk&#37;&#52;&#48;latest">wx-server-sdk<span>&#64;</span>latest</a>。</p>
 <p>接下来，可在云函数中使用云调用 API 了。云调用 API 均挂载在 wx-server-sdk 模块的 openapi 对象下，各个开放接口类别在 openapi 对象下设二级命名空间对象（如模板消息接口的方法均在 openapi.templateMessage 下），该对象下挂载该类别下的所有开放方法（比如模板消息的发送接口是 openapi.templateMessage.send）。各接口从属的类别名称和方法名称可以通过接口名称查看，接口名称均以 &lt;类别&gt;.&lt;方法&gt; 命名，如发送模板消息的接口名称是 templateMessage.send。下面是一个给自己发送模板消息的示例：</p>
 <p>如需可直接运行的示例，请在 IDE 中创建一个云开发快速启动模板的项目，其中有包含发送模板消息的云调用的示例</p>
-<p>const cloud = require(‘wx-server-sdk’)
-cloud.init()
-exports.main = async (event, context) =&gt; {</p>
-<blockquote>
-<div><dl>
-<dt>try {</dt><dd><dl>
-<dt>const result = await cloud.openapi.templateMessage.send({</dt><dd><p>touser: cloud.getWXContext().OPENID, // 通过 getWXContext 获取 OPENID
-page: ‘index’,
-data: {</p>
-<blockquote>
-<div><dl class="simple">
-<dt>keyword1: {</dt><dd><p>value: ‘339208499’</p>
-</dd>
-</dl>
-<p>},
-keyword2: {</p>
-<blockquote>
-<div><p>value: ‘2015年01月05日 12:30’</p>
-</div></blockquote>
-<p>},
-keyword3: {</p>
-<blockquote>
-<div><p>value: ‘腾讯微信总部’</p>
-</div></blockquote>
-<p>},
-keyword4: {</p>
-<blockquote>
-<div><p>value: ‘广州市海珠区新港中路397号’</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>},
-templateId: ‘TEMPLATE_ID’,
-formId: ‘FORMID’,
-emphasisKeyword: ‘keyword1.DATA’</p>
-</dd>
-</dl>
-<p>})
-// result 结构
-// { errCode: 0, errMsg: ‘openapi.templateMessage.send:ok’ }
-return result</p>
-</dd>
-<dt>} catch (err) {</dt><dd><p>// 错误处理
-// err.errCode !== 0
-throw err</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>}</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">cloud</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;wx-server-sdk&#39;</span><span class="p">)</span>
+<span class="nx">cloud</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">main</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">cloud</span><span class="p">.</span><span class="nx">openapi</span><span class="p">.</span><span class="nx">templateMessage</span><span class="p">.</span><span class="nx">send</span><span class="p">({</span>
+      <span class="nx">touser</span><span class="o">:</span> <span class="nx">cloud</span><span class="p">.</span><span class="nx">getWXContext</span><span class="p">().</span><span class="nx">OPENID</span><span class="p">,</span> <span class="c1">// 通过 getWXContext 获取 OPENID</span>
+      <span class="nx">page</span><span class="o">:</span> <span class="s1">&#39;index&#39;</span><span class="p">,</span>
+      <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">keyword1</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;339208499&#39;</span>
+        <span class="p">},</span>
+        <span class="nx">keyword2</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;2015年01月05日 12:30&#39;</span>
+        <span class="p">},</span>
+        <span class="nx">keyword3</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;腾讯微信总部&#39;</span>
+        <span class="p">},</span>
+        <span class="nx">keyword4</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;广州市海珠区新港中路397号&#39;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="nx">templateId</span><span class="o">:</span> <span class="s1">&#39;TEMPLATE_ID&#39;</span><span class="p">,</span>
+      <span class="nx">formId</span><span class="o">:</span> <span class="s1">&#39;FORMID&#39;</span><span class="p">,</span>
+      <span class="nx">emphasisKeyword</span><span class="o">:</span> <span class="s1">&#39;keyword1.DATA&#39;</span>
+    <span class="p">})</span>
+    <span class="c1">// result 结构</span>
+    <span class="c1">// { errCode: 0, errMsg: &#39;openapi.templateMessage.send:ok&#39; }</span>
+    <span class="k">return</span> <span class="nx">result</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 错误处理</span>
+    <span class="c1">// err.errCode !== 0</span>
+    <span class="k">throw</span> <span class="nx">err</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 
 
