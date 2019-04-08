@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">6. 游戏开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../contents.html">Docs</a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/game/dev/tutorial/ability/audio.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>音频播放</p>
+<p>小游戏内只有一种音频播放的方式，即使用 InnerAudioContext 来播放。 使用
+InnerAudioContext 播放</p>
+<p>通过 wx.createInnerAudioContext() 接口可以创建一个音频实例
+innerAudioContext ，通过这个实例可以播放音频。</p>
+<p>var audio = wx.createInnerAudioContext() audio.src = url // src 可以设置
+http(s) 的路径，本地文件路径或者代码包文件路径 audio.play()</p>
+<p>在 iOS
+系统上，默认遵循静音键设置。如果希望在静音时也能播放声音，可以设置
+obeyMuteSwitch 为 false。</p>
+<p>audio.obeyMuteSwitch = false</p>
+<p>自动播放和循环播放</p>
+<p>设置 autoplay 和 loop
+属性可以自动播放和循环播放音频，一般适用于背景音乐。</p>
+<p>var bgm = wx.createInnerAudioContext() bgm.autoplay = true bgm.loop =
+true bgm.src = url</p>
+<p>回到前台时恢复背景音乐</p>
+<p>当小游戏被隐藏到后台时，所有音频会被暂停，并在回到前台之前都不能再播放成功。</p>
+<p>回到前台之后，被暂停的音频不会自动继续播放，如果小游戏有背景音乐的话，需要监听回到前台事件，并在收到回到前台事件之后调用背景音乐继续播放。</p>
+<p>wx.onShow(function () { bgm.play() })</p>
+<p>处理音频中断事件</p>
+<p>音频中断事件指的是在游戏期间，音频被系统打断时触发的事件。音频中断事件分为中断开始和中断结束事件，分别使用
+wx.onAudioInterruptionBegin() 和 wx.onAudioInterruptionEnd() 来监听。</p>
+<p>以下事件会触发音频中断开始事件：接到电话、闹钟响起、系统提醒、收到微信好友的语音/视频通话请求。被中断之后，小游戏内所有音频会被暂停，并在中断结束之前都不能再播放成功。</p>
+<p>中断结束之后，被暂停的音频不会自动继续播放，如果小游戏有背景音乐的话，需要监听音频中断结束事件，并在收到中断结束事件之后调用背景音乐继续播放。</p>
+<p>wx.onAudioInterruptionEnd(function () { bgm.play() })</p>
+<p>如果小游戏的逻辑强依赖音乐的播放，则需要在音频开始中断的时候暂停游戏</p>
+<p>wx.onAudioInterruptionBegin(function () { // 暂停游戏 })</p>
+<p>兼容性说明</p>
+<p>目前两个平台完全支持的音频格式有
+mp3、aac、wav。其他格式存在系统差异，不保证支持。 最佳实践
+复用已有的音频实例</p>
+<p>对于相同的音效，应该复用已有的音频实例，而不是重新创建一个音频实例。
+及时销毁不需要的音频实例</p>
+<p>如果一个音频不再需要使用了，可以调用 InnerAudioContext.destroy()
+接口提前销毁这个实例。 Android 同时播放的音频数量限制</p>
+<p>由于系统限制，在 Android 上最多同时播放 10
+个音频，超过的部分会做有损处理，对开发者来说不感知，但开发者应尽量避免同时播放过多音频。</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

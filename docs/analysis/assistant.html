@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.5. 小程序数据助手 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="8. 微信小程序平台运营规范" href="../product/index.html" />
+    <link rel="prev" title="7.4. 自定义分析" href="custom.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../game/index.html">6. 游戏开发</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">7. 数据分析</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">7.1. 功能概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regular.html">7.2. 常规分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function.html">7.3. 小程序数据</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom.html">7.4. 自定义分析</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.5. 小程序数据助手</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">7.5.1. 功能概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">7.5.2. 使用说明</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">7.5.2.1. 管理员授权</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">7.5.2.2. 管理员取消授权</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">7.5.2.3. 切换查看数据的小程序</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">7. 数据分析</a> &raquo;</li>
+        
+      <li>7.5. 小程序数据助手</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/analysis/assistant.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>7.5. 小程序数据助手<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>7.5.1. 功能概述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>“小程序数据助手”是微信公众平台发布的官方小程序，支持相关的开发和运营人员查看自身小程序的运营数据，扫描下面小程序码可立即体验。</p>
+<div class="figure align-center" id="id7">
+<img alt="a0" src="../_images/a0.png" />
+<p class="caption"><span class="caption-text">a0</span><a class="headerlink" href="#id7" title="永久链接至图片">¶</a></p>
+</div>
+<p>“小程序数据助手”当前功能模块包括数据概况、访问基础分析（用户趋势、来源分析、留存分析、时长分析、页面详情）、实时统计和用户画像（年龄性别、省份城市、终端机型），数据与小程序后台常规分析一致。</p>
+<div class="figure align-center" id="id8">
+<img alt="a1" src="../_images/a1.png" />
+<p class="caption"><span class="caption-text">a1</span><a class="headerlink" href="#id8" title="永久链接至图片">¶</a></p>
+</div>
+<p>数据详细说明参见<a class="reference external" href="https://mp.weixin.qq.com/debug/wxadoc/analysis/regular/?t=2018323">常规分析</a></p>
+</div>
+<div class="section" id="id3">
+<h2>7.5.2. 使用说明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p><strong>小程序管理员：</strong>
+打开“小程序数据助手”，可以选择查看已绑定小程序的数据。
+其他微信用户：经管理员授权后可以查看已授权小程序的数据。</p>
+<div class="section" id="id4">
+<h3>7.5.2.1. 管理员授权<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>点击左上角菜单，在导航页中选择“授权”；</p></li>
+<li><p>在搜索框中输入微信号查询，或“从小程序开发者/体验者中选择”，点击“授权”；</p></li>
+<li><p>授权成功后，被授权用户将接收到模板消息通知；</p></li>
+</ol>
+<div class="figure align-center" id="id9">
+<img alt="a2" src="../_images/a2.png" />
+<p class="caption"><span class="caption-text">a2</span><a class="headerlink" href="#id9" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>7.5.2.2. 管理员取消授权<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>点击左上角菜单，在导航页中选择“授权”；</p></li>
+<li><p>在已授权用户列表中，左滑取消授权。取消授权后，用户不再有查看该小程序数据的权限。</p></li>
+</ol>
+<div class="figure align-center" id="id10">
+<img alt="a3" src="../_images/a3.png" />
+<p class="caption"><span class="caption-text">a3</span><a class="headerlink" href="#id10" title="永久链接至图片">¶</a></p>
+</div>
+<p>小程序数据查询授权也可以在后台“用户身份”设置操作，勾选“数据分析”后，用户即可使用小程序数据助手查看数据。如果超过上限，可以取消已授权用户后再进行操作。</p>
+<div class="figure align-center" id="id11">
+<img alt="a4" src="../_images/a4.png" />
+<p class="caption"><span class="caption-text">a4</span><a class="headerlink" href="#id11" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>7.5.2.3. 切换查看数据的小程序<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>如果是多个小程序的管理员，或被授权查看多个小程序数据，可以统一在”小程序数据助手”切换查看。</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>首次打开“小程序数据助手”，直接从列表中选择；
+点击左上角菜单，在导航页中选择“切换”，从列表中重新选择。
+</pre></div>
+</div>
+<div class="figure align-center" id="id12">
+<img alt="a5" src="../_images/a5.png" />
+<p class="caption"><span class="caption-text">a5</span><a class="headerlink" href="#id12" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../product/index.html" class="btn btn-neutral float-right" title="8. 微信小程序平台运营规范" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="custom.html" class="btn btn-neutral float-left" title="7.4. 自定义分析" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

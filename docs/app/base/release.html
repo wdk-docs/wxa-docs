@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="role.html" />
+    <link rel="prev" title="5.3. 起步" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">5. 小程序开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../game/index.html">6. 游戏开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">5. 小程序开发</a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/app/base/release.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p>开发和测试完成之后，就需要将小程序发布给用户来使用了。</p>
+<p>提交审核
+为了保证小程序的质量，以及符合相关的规范，小程序的发布是需要经过审核的</p>
+<p>在开发者工具中上传了小程序代码之后，登录 小程序管理后台 - 开发管理 -
+开发版本 找到提交上传的版本。</p>
+<p>在开发版本的列表中，点击 提交审核
+按照页面提示，填写相关的信息，即可以将小程序提交审核。</p>
+<p>需要注意的是，请开发者严格测试了版本之后，再提交审核，
+过多的审核不通过，可能会影响后续的时间。</p>
+<p>发布 审核通过之后，管理员的微信中会收到小程序通过审核的通知，此时登录
+小程序管理后台 - 开发管理 - 审核版本。中可以看到通过审核的版本。</p>
+<p>请点击发布，既可发布小程序。</p>
+<p>运营数据 有两种方式可以方便的看到小程序的 运营数据</p>
+<p>方法一：</p>
+<p>登录 小程序管理后台 - 数据分析</p>
+<p>点击相应的 tab 可以看到相关的数据。</p>
+<p>方法二：</p>
+<p>使用小程序数据助手，在微信中方便的查看运营数据</p>
+<p>mydev</p>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="role.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="5.3. 起步" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

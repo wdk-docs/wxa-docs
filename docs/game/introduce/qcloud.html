@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.2. 腾讯云支持 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="6.3. 扫普通链接二维码打开小程序" href="qrcode.html" />
+    <link rel="prev" title="6.1. 微信小游戏接入指南" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">6. 游戏开发</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">6.1. 微信小游戏接入指南</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.2. 腾讯云支持</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.2.1. 介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.2.2. 开发环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">6.2.3. 生产环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">6.2.4. 通过微信公众平台授权登录腾讯云</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">6.2.5. 安装开发工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demo-nodejs">6.2.6. 微信小游戏快速开发 Demo - Nodejs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">6.2.7. 腾讯云一站式部署开通指引</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8">6.2.7.1. 一、通过微信公众平台授权登录腾讯云</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">6.2.7.2. 二、安装开发工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#demo">6.2.7.3. 三、下载 Demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">6.2.7.4. 四、上传和部署代码</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#demo-php">6.2.8. 快速开发 Demo - PHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">6.2.9. 腾讯云一站式部署开通指引</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">6.2.9.1. 一、通过微信公众平台授权登录腾讯云</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">6.2.9.2. 二、安装开发工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#demo-1">6.2.9.3. 三、下载 Demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">6.2.9.4. 四、上传和部署代码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">6.2.9.5. 相关开发文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="qrcode.html">6.3. 扫普通链接二维码打开小程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev/index.html">6.4. 快速上手</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">6. 游戏开发</a> &raquo;</li>
+        
+      <li>6.2. 腾讯云支持</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/game/introduce/qcloud.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6.2. 腾讯云支持<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>6.2.1. 介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>腾讯云为开发者提供免费的开发环境和生产环境，更加方便、快速、可靠的构建您的小程序。</p>
+</div>
+<div class="section" id="id3">
+<h2>6.2.2. 开发环境<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>免费使用</p></li>
+<li><p>自动分配测试用二级域名：xxxxxxx.qcloud.la</p></li>
+<li><p>自动部署免费 HTTPS</p></li>
+<li><p>仅可用于线上调试，不可发布</p></li>
+<li><p>代码部署、运行和数据库与生产环境完全分开</p></li>
+<li><p>与微信开发工具打通，可一键部署、调试、重启和恢复代码</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>6.2.3. 生产环境<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>免费使用</p></li>
+<li><p>用户需购买或使用已有的腾讯云域名</p></li>
+<li><p>自动部署免费 HTTPS</p></li>
+<li><p>用于线上发布，不可调试</p></li>
+<li><p>使用微信开发工具上传代码，在腾讯云控制台操作部署，上传和发布分离，降低误操作风险</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>6.2.4. 通过微信公众平台授权登录腾讯云<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>打开 微信公众平台 注册并登录小程序，按如下步骤操作：</p>
+<ul class="simple">
+<li><p>单击左侧菜单栏中的【设置】</p></li>
+<li><p>单击右侧 Tab 栏中的【开发者工具】</p></li>
+<li><p>单击【腾讯云】，进入腾讯云工具页面，单击【开通】</p></li>
+<li><p>使用小程序绑定的微信扫码即可将小程序授权给腾讯云，开通之后会自动进去腾讯云微信小程序控制台，显示开发环境已开通，此时可以进行后续操作</p></li>
+</ul>
+<p>!!! note “注意”</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>此时通过小程序开发者工具查看腾讯云状态并不会显示已开通，已开通状态会在第一次部署开发环境之后才会同步到微信开发者工具上。
+</pre></div>
+</div>
+<p>进入微信公众平台后台</p>
+<p>开通腾讯云</p>
+<div class="figure align-center" id="id21">
+<img alt="腾讯云微信小程序控制台" src="../../_images/31.png" />
+<p class="caption"><span class="caption-text">腾讯云微信小程序控制台</span><a class="headerlink" href="#id21" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>6.2.5. 安装开发工具<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>下载并安装最新版本的<a class="reference external" href="https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/download.html?t=2018323">微信开发者工具</a>
+，使用小程序绑定的微信号扫码登录开发者工具。</p>
+<div class="figure align-center" id="id22">
+<img alt="微信开发者工具" src="../../_images/41.png" />
+<p class="caption"><span class="caption-text">微信开发者工具</span><a class="headerlink" href="#id22" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="demo-nodejs">
+<h2>6.2.6. 微信小游戏快速开发 Demo - Nodejs<a class="headerlink" href="#demo-nodejs" title="永久链接至标题">¶</a></h2>
+<p>本仓库是最简版的 Wafer2
+开发套件，建议配合腾讯云微信小程序（游戏）开发者工具解决方案一起使用。适用于想要使用
+Wafer SDK 开发的开发者，Demo 对 SDK
+进行了详细的使用和介绍，降低开发者的学习成本。</p>
+</div>
+<div class="section" id="id7">
+<h2>6.2.7. 腾讯云一站式部署开通指引<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>只需要四步即可部署属于自己的小程序(游戏)<strong>开发环境</strong>。</p>
+<div class="section" id="id8">
+<h3>6.2.7.1. 一、通过微信公众平台授权登录腾讯云<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>打开<a class="reference external" href="https://mp.weixin.qq.com/index.html?t=2018323">微信公众平台</a>注册并登录小程序(游戏)，按如下步骤操作：</p>
+<p>注意：在跳转到腾讯云前，请先在微信开放平台选择小程序类目为“游戏”类型</p>
+<ol class="arabic simple">
+<li><p>单击左侧菜单栏中的【设置】。</p></li>
+<li><p>单击右侧 Tab 栏中的【开发者工具】。</p></li>
+<li><p>单击【腾讯云】，进入腾讯云工具页面，单击【开通】。</p></li>
+<li><p>使用小程序（游戏）绑定的微信扫码即可将小程序（游戏）授权给腾讯云，开通之后会自动进去腾讯云微信小程序（游戏）控制台，显示开发环境已开通，此时可以进行后续操作。</p></li>
+</ol>
+<p>!!! note “注意”</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>此时通过小程序（游戏）开发者工具查看腾讯云状态并不会显示已开通，已开通状态会在第一次部署开发环境之后才会同步到微信开发者工具上。
+</pre></div>
+</div>
+<div class="figure align-center" id="id23">
+<img alt="进入微信公众平台后台" src="../../_images/13.jpg" />
+<p class="caption"><span class="caption-text">进入微信公众平台后台</span><a class="headerlink" href="#id23" title="永久链接至图片">¶</a></p>
+</div>
+<div class="figure align-center" id="id24">
+<img alt="开通腾讯云" src="../../_images/14.jpg" />
+<p class="caption"><span class="caption-text">开通腾讯云</span><a class="headerlink" href="#id24" title="永久链接至图片">¶</a></p>
+</div>
+<div class="figure align-center" id="id25">
+<img alt="腾讯云微信小程序控制台" src="../../_images/15.png" />
+<p class="caption"><span class="caption-text">腾讯云微信小程序控制台</span><a class="headerlink" href="#id25" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>6.2.7.2. 二、安装开发工具<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>下载并安装最新版本的微信开发者工具，使用小程序绑定的微信号扫码登录开发者工具。</p>
+<div class="figure align-center" id="id26">
+<img alt="微信开发者工具" src="../../_images/bb57ee98c4ab67864303416fe9ab87f3.jpg" />
+<p class="caption"><span class="caption-text">微信开发者工具</span><a class="headerlink" href="#id26" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="demo">
+<h3>6.2.7.3. 三、下载 Demo<a class="headerlink" href="#demo" title="永久链接至标题">¶</a></h3>
+<p>你可以通过两个途径访问 Github 上 wafer2-game-quickstart-nodejs 项目下载
+Demo 代码：</p>
+<ol class="arabic simple">
+<li><p>访问<a class="reference external" href="https://github.com/pxunl/wafer2-game-quickstart-nodejs.git?t=2018323">仓库主页</a>，单机
+clone or download 按钮，再单击 Download ZIP 下载打包好的 Demo 代码：
+<img alt="下载代码" src="../../_images/bb57ee98c4ab67864303416fe9ab87f3.jpg" /></p></li>
+<li><p>通过 git clone 下载代码：
+<code class="docutils literal notranslate"><span class="pre">sh</span>&#160; <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/pxunl/wafer2-game-quickstart-nodejs.git</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="id10">
+<h3>6.2.7.4. 四、上传和部署代码<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>打开第二步安装的微信开发者工具，点击【小程序项目】按钮。</p></li>
+<li><p>输入小程序(游戏)
+AppID，项目目录选择上一步下载下来的代码目录，点击确定创建小程序(游戏)项目。</p></li>
+<li><p>再次点击【确定】进入开发者工具。</p></li>
+</ol>
+<p>!!! note “注意”</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>目录请选择 wafer2-game-quickstart-nodejs 根目录。包含有 project.config.json，请不要只选择 client 目录！
+
+[上传代码](1c00c367989a6ee5d094427d5bc4ccf2.png)
+
+[开发者工具](5d4ab9c8ba7a678f93df0a841d8b31af.jpg)
+</pre></div>
+</div>
+<ol class="arabic" start="4">
+<li><p>打开 Demo 代码中 server 目录下的 config.js 文件，将其中的 mysql
+配置项的密码 pass 改成你的微信小程序(游戏) AppID，并保存。</p>
+<p>修改 MySQL 密码</p>
+</li>
+<li><p>点击界面右上角的【腾讯云】图标，在下拉的菜单栏中选择【上传测试代码】。</p>
+<p>上传按钮</p>
+</li>
+<li><p>选择【模块上传】并勾选全部选项，然后勾选【部署后自动安装依赖】，点击【确定】开始上传代码。</p>
+<p>选择模块</p>
+<p>上传成功</p>
+</li>
+<li><p>上传代码完成之后，点击右上角的【详情】按钮，接着选择【腾讯云状态】即可看到腾讯云自动分配给你的开发环境域名：</p>
+<p>查看开发域名</p>
+</li>
+<li><p>完整复制（包括 <a class="reference external" href="https://">https://</a>）开发环境 request 域名，然后在编辑器中打开
+client/config.js 文件，将复制的域名填入 host
+中并保存，保存之后编辑器会自动编译小程序(游戏)，左边的模拟器窗口即可实时显示出客户端的
+Demo：
+(注意，如果在真机上调试，请将域名手动写入到微信开放平台对应app的地址配置中，否则需要在客户端开启debug模式才能正常体验)</p>
+<p>修改客户端配置</p>
+</li>
+</ol>
+<p>在模拟器中试玩，看到显示“登录成功”，说明环境ok了，可以开始你的其他开发了。</p>
+</div>
+</div>
+<div class="section" id="demo-php">
+<h2>6.2.8. 快速开发 Demo - PHP<a class="headerlink" href="#demo-php" title="永久链接至标题">¶</a></h2>
+<p>本仓库是最简版的 Wafer2
+开发套件，建议配合腾讯云微信小程序（游戏）开发者工具解决方案一起使用。适用于想要使用
+Wafer SDK 开发的开发者，Demo 对 SDK
+进行了详细的使用和介绍，降低开发者的学习成本。</p>
+</div>
+<div class="section" id="id11">
+<span id="id12"></span><h2>6.2.9. 腾讯云一站式部署开通指引<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>只需要四步即可部署属于自己的小程序(游戏)开发环境。</p>
+<div class="section" id="id13">
+<span id="id14"></span><h3>6.2.9.1. 一、通过微信公众平台授权登录腾讯云<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>打开微信公众平台注册并登录小程序(游戏)，按如下步骤操作：</p>
+<p>注意：在跳转到腾讯云前，请先在微信开放平台选择小程序类目为“游戏”类型</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>单击左侧菜单栏中的【设置】。
+单击右侧 Tab 栏中的【开发者工具】。
+单击【腾讯云】，进入腾讯云工具页面，单击【开通】。
+使用小程序（游戏）绑定的微信扫码即可将小程序（游戏）授权给腾讯云，开通之后会自动进去腾讯云微信小程序（游戏）控制台，显示开发环境已开通，此时可以进行后续操作。
+
+注意：
+
+此时通过小程序（游戏）开发者工具查看腾讯云状态并不会显示已开通，已开通状态会在第一次部署开发环境之后才会同步到微信开发者工具上。
+</pre></div>
+</div>
+<p>进入微信公众平台后台</p>
+<p>开通腾讯云</p>
+<p>腾讯云微信小程序控制台</p>
+</div>
+<div class="section" id="id15">
+<span id="id16"></span><h3>6.2.9.2. 二、安装开发工具<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p>下载并安装最新版本的微信开发者工具，使用小程序绑定的微信号扫码登录开发者工具。</p>
+<p>微信开发者工具</p>
+</div>
+<div class="section" id="demo-1">
+<span id="id17"></span><h3>6.2.9.3. 三、下载 Demo<a class="headerlink" href="#demo-1" title="永久链接至标题">¶</a></h3>
+<p>你可以通过两个途径访问 Github 上 wafer2-quickstart-php 项目下载 Demo
+代码：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>访问仓库主页，单机 clone or download 按钮，再单击 Download ZIP 下载打包好的 Demo 代码：
+
+下载代码
+
+通过 git clone 下载代码：
+
+git clone https://github.com/tencentyun/wafer2-quickstart-php.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="id18">
+<span id="id19"></span><h3>6.2.9.4. 四、上传和部署代码<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>打开第二步安装的微信开发者工具，点击【小程序项目】按钮。
+
+输入小程序(游戏) AppID，项目目录选择上一步下载下来的代码目录，点击确定创建小程序(游戏)项目。
+
+再次点击【确定】进入开发者工具。
+
+    注意：
+
+    目录请选择 wafer2-quickstart-php 根目录。包含有 project.config.json，请不要只选择 client 目录！
+
+上传代码
+
+开发者工具
+
+打开 Demo 代码中 server 目录下的 config.php 文件，将其中的 mysql 配置项的密码 pass 改成你的微信小程序(游戏) AppID，并保存。
+
+修改 MySQL 密码
+
+点击界面右上角的【腾讯云】图标，在下拉的菜单栏中选择【上传测试代码】。
+
+上传按钮
+
+选择【模块上传】并勾选全部选项，然后勾选【部署后自动安装依赖】，点击【确定】开始上传代码。
+
+选择模块
+
+上传成功
+
+上传代码完成之后，点击右上角的【详情】按钮，接着选择【腾讯云状态】即可看到腾讯云自动分配给你的开发环境域名：
+
+查看开发域名
+
+完整复制（包括 https://）开发环境 request 域名，然后在编辑器中打开 client/config.js 文件，将复制的域名填入 host 中并保存，保存之后编辑器会自动编译小程序(游戏)，左边的模拟器窗口即可实时显示出客户端的 Demo： (注意，如果在真机上调试，请将域名手动写入到微信开放平台对应app的地址配置中，否则需要在客户端开启debug模式才能正常体验)
+
+修改客户端配置
+</pre></div>
+</div>
+<p>在模拟器中试玩，看到显示“登录成功”，说明环境ok了，可以开始你的其他开发了。</p>
+</div>
+<div class="section" id="id20">
+<h3>6.2.9.5. 相关开发文档<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+<p>我们还提供了服务端、客户端的 Demo、SDK 的具体文档：</p>
+<ul class="simple">
+<li><p>开发环境和生产环境</p></li>
+<li><p>自行部署</p></li>
+<li><p>一站式部署</p></li>
+<li><p>常见问题</p>
+<ul>
+<li><p>如何部署代码到开发环境</p></li>
+<li><p>如何重启服务器</p></li>
+<li><p>如何恢复初始化环境</p></li>
+<li><p>如何远程调试后台代码</p></li>
+<li><p>如何查看后台日志</p></li>
+<li><p>如何修改数据库密码</p></li>
+<li><p>如何新建和修改数据库的库表</p></li>
+<li><p>如何上传图片</p></li>
+<li><p>如何部署 Demo 到自己的服务器</p></li>
+<li><p>如何快速新建路由</p></li>
+<li><p>微信后台如何配置客服消息推送接口</p></li>
+<li><p>如何使用服务端 SDK 连接和操作数据库</p></li>
+<li><p>本地如何搭建开发环境</p></li>
+</ul>
+</li>
+<li><p>Wafer2 服务端 Demo 文档</p></li>
+<li><p>Wafer2 服务端 Demo 工具文档</p></li>
+<li><p>Wafer2 客户端 Demo 文档</p></li>
+<li><p>Wafer2 服务端 SDK 使用文档</p></li>
+<li><p>Wafer2 服务端 SDK API 文档</p></li>
+<li><p>Wafer2 客户端 SDK 使用文档</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="qrcode.html" class="btn btn-neutral float-right" title="6.3. 扫普通链接二维码打开小程序" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="6.1. 微信小游戏接入指南" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

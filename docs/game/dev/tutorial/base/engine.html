@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>对引擎的支持 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">6. 游戏开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../contents.html">Docs</a> &raquo;</li>
+        
+      <li>对引擎的支持</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/game/dev/tutorial/base/engine.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>对引擎的支持<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>支持情况<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>许多开发者对小游戏对 Cocos、Egret、Laya、Unity
+等游戏引擎的支持情况非常关心。但是小游戏是一个不同于浏览器的 JavaScript
+运行环境，没有 BOM 和 DOM API。然而，基本上所有基于 HTML5
+的游戏引擎都是依赖浏览器提供的 BOM 和 DOM API
+的。所以如果要在小游戏中使用引擎，需要对引擎进行改造。</p>
+<p>目前，Cocos、Egret、Laya
+已经完成了自身引擎及其工具对小游戏的适配和支持，对应的官方文档已经对接入小游戏开发做了介绍。</p>
+<ul class="simple">
+<li><p>Cocos：<a class="reference external" href="http://docs.cocos.com/creator/manual/zh/publish/publish-wechatgame.html">http://docs.cocos.com/creator/manual/zh/publish/publish-wechatgame.html</a></p></li>
+<li><p>Egret：<a class="reference external" href="http://developer.egret.com/cn/github/egret-docs/Engine2D/minigame/introduction/index.html">http://developer.egret.com/cn/github/egret-docs/Engine2D/minigame/introduction/index.html</a></p></li>
+<li><p>LayaBox：<a class="reference external" href="https://ldc.layabox.com/doc/?nav=zh-as-5-0-1">https://ldc.layabox.com/doc/?nav=zh-as-5-0-1</a></p></li>
+</ul>
+<p>Unity 目前还没有对小游戏进行适配。不过小游戏提供了对大部分 Canvas 2d 和
+WebGL 1.0 特性的支持，支持情况参见
+<a class="reference external" href="https://mp.weixin.qq.com/debug/wxagame/dev/document/render/canvas/RenderingContext.html?t=2018323">RenderingContext</a>，有能力的开发者可以尝试自行适配。</p>
+</div>
+<div class="section" id="id3">
+<h2>小游戏是一个不同于浏览器的运行环境<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>无论是怎样的引擎，最终在游戏运行时所做的大部分事情都是
+随着用户的交互更新画面和播放声音。小游戏的开发语言是
+JavaScript，那么在引擎的底层就需要通过 JavaScript 调用绘制 API 和音频
+API。</p>
+<p>一段 JavaScript 代码在运行时可以调用的 API 是依赖于 宿主环境
+的。我们最常用的 console.log 甚至都不是 JavaScript
+语言核心的一部分，而是浏览器这个宿主环境提供的。常见的宿主环境有浏览器、Node.js
+等。浏览器有 BOM 和 DOM API，而 Node.js 则没有；Node.js 有 fs、net 等
+Node.js 核心模块提供的文件、网络
+API，而浏览器则不具备这些模块。例如，下面这段在浏览器中可以正常运行的代码，在
+Node.js 中运行就会报错。</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>因为 Node.js 这个宿主环境根本没有提供 document 这个内置的全局变量。</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">ReferenceError</span><span class="o">:</span> <span class="nb">document</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">defined</span>
+</pre></div>
+</div>
+<p>小游戏的运行环境是一个不同于浏览器的宿主环境，没有提供 BOM 和 DOM
+API，提供的是 wx API。通过 wx API，开发者可以调用 Native
+提供的绘制、音视频、网络、文件等能力。</p>
+<div class="figure align-center" id="id4">
+<img alt="framework-1" src="../../../../_images/framework-1.png" />
+<p class="caption"><span class="caption-text">framework-1</span><a class="headerlink" href="#id4" title="永久链接至图片">¶</a></p>
+</div>
+<p>如果你想创建画布，你需要调用 wx.createCanvas()</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nx">wx</span><span class="p">.</span><span class="nx">createCanvas</span><span class="p">()</span>
+<span class="kd">let</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果你想创建一个音频对象，你需要调用 wx.createInnerAudioContext()</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">audio</span> <span class="o">=</span> <span class="nx">wx</span><span class="p">.</span><span class="nx">createInnerAudioContext</span><span class="p">()</span>
+<span class="c1">// src 地址仅作演示，并不真实存在</span>
+<span class="nx">audio</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;bgm.mp3&#39;</span>
+<span class="nx">audio</span><span class="p">.</span><span class="nx">play</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>如果你想获取屏幕的宽高，你需要调用 wx.getSystemInfoSync()</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="p">{</span> <span class="nx">screenWidth</span><span class="p">,</span> <span class="nx">screenHeight</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">wx</span><span class="p">.</span><span class="nx">getSystemInfoSync</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>但是基于 HTML5 的游戏引擎会通过以下方式去创建画布、音频，获取屏幕宽高</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">audio</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;audio&#39;</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>此时会产生错误，理由如前文所述，小游戏这个宿主环境根本没有提供 document
+和 window
+这两个在浏览器中内置的全局变量。因为小游戏环境是一个不同于浏览器的宿主环境。</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">ReferenceError</span><span class="o">:</span> <span class="nb">document</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">defined</span>
+<span class="nx">ReferenceError</span><span class="o">:</span> <span class="nb">window</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">defined</span>
+</pre></div>
+</div>
+<p>所以，基本上所有基于 HTML5
+的游戏引擎都不能直接迁移到小游戏中使用，因为引擎可能或多或少都用到了 BOM
+和 DOM 这些浏览器环境特有的 API。只有对引擎进行改造，将对 BOM 和 DOM API
+的调用改成 wx API 的调用，引擎才能运行在小游戏环境中。</p>
+<p>除了修改引擎，还有一种适配方式，即在引擎和游戏逻辑代码之间加一层模拟 BOM
+和 DOM API 的适配层，我们称之为 Adapter。这层适配层在全局通过 wx API
+模拟了引擎会访问到的那部分 window 和 document
+对象的属性和方法，使引擎感受不到环境的差异。</p>
+<div class="figure align-center" id="id5">
+<img alt="framework-2" src="../../../../_images/framework-2.png" />
+<p class="caption"><span class="caption-text">framework-2</span><a class="headerlink" href="#id5" title="永久链接至图片">¶</a></p>
+</div>
+<p>Adapter 是用户代码，不是基础库的一部分。关于 Adapter 的介绍，参见教程
+Adapter。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

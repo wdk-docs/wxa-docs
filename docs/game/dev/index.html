@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.4. 快速上手 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../analysis/analysis.html" />
+    <link rel="prev" title="6.3. 扫普通链接二维码打开小程序" href="../introduce/qrcode.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">6. 游戏开发</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduce/index.html">6.1. 微信小游戏接入指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduce/qcloud.html">6.2. 腾讯云支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduce/qrcode.html">6.3. 扫普通链接二维码打开小程序</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.4. 快速上手</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.4.1. 安装开发工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.4.2. 你的第一个小游戏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">6.4.3. 真机预览</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">6.4.4. 文件结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">6.4.5. 配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deviceorientation">6.4.6. deviceOrientation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">6.4.7. 示例配置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wx-api">6.4.8. wx API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas">6.4.9. 在 Canvas 上进行绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">6.4.10. 显示图片</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">6.4.11. 创建多个 Canvas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">6.4.12. 动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">6.4.13. 触摸事件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">6.4.14. 全局对象</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">6. 游戏开发</a> &raquo;</li>
+        
+      <li>6.4. 快速上手</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/game/dev/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6.4. 快速上手<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>6.4.1. 安装开发工具<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>前往 开发者工具下载页面 ，根据自己的操作系统下载对应的安装包进行安装。</p>
+</div>
+<div class="section" id="id3">
+<h2>6.4.2. 你的第一个小游戏<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>新建项目选择小程序项目，选择代码存放的硬盘路径。
+目前小游戏不提供公开注册，可点击体验小游戏使用无 AppID 模式。
+给你的项目起一个好听的名字，最后，勾选“建立游戏快速启动模板”（注意：你要选择一个空的目录才会有这个选项），点击确定，你就得到了你的第一个小游戏了。</p>
+<p>点击顶部菜单编译就可以在 IDE 预览你的第一个小游戏。</p>
+</div>
+<div class="section" id="id4">
+<h2>6.4.3. 真机预览<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>点击工具上的编译按钮，可以在工具的左侧模拟器界面看到这个小游戏的表现。点击预览按钮，通过微信的扫一扫在手机上体验你的第一个小游戏。</p>
+</div>
+<div class="section" id="id5">
+<h2>6.4.4. 文件结构<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>小游戏只有以下两个必要文件：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>├── game.js
+└── game.json
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>game.js 小游戏入口文件</p></li>
+<li><p>game.json 配置文件</p></li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h2>6.4.5. 配置<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>小游戏开发者通过在根目录编写一个 game.json
+文件进行配置，开发者工具和客户端需要读取这个配置，完成相关界面渲染和属性设置。</p>
+</div>
+<div class="section" id="deviceorientation">
+<h2>6.4.6. deviceOrientation<a class="headerlink" href="#deviceorientation" title="永久链接至标题">¶</a></h2>
+<p>值 说明 portrait 竖屏 landscape 横屏</p>
+</div>
+<div class="section" id="id7">
+<h2>6.4.7. 示例配置<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>{ “deviceOrientation”: “portrait”, “networkTimeout”: { “request”: 5000,
+“connectSocket”: 5000, “uploadFile”: 5000, “downloadFile”: 5000 } }</p>
+</div>
+<div class="section" id="wx-api">
+<h2>6.4.8. wx API<a class="headerlink" href="#wx-api" title="永久链接至标题">¶</a></h2>
+<p>你只能使用 JavaScript 来编写小游戏。小游戏的运行环境是一个
+绑定了一些方法的 JavaScript VM。不同于浏览器，这个运行环境没有 BOM 和
+DOM API，只有 wx API。接下来我们将介绍如何用 wx API
+来完成创建画布、绘制图形、显示图片以及响应用户交互等基础功能。 创建
+Canvas</p>
+<p>调用 wx.createCanvas() 接口，可以创建一个 Canvas 对象。</p>
+<p>var canvas = wx.createCanvas()</p>
+<p>此时创建的 canvas 是一个上屏
+Canvas，已经显示在了屏幕上，且与屏幕等宽等高。</p>
+<p>console.log(canvas.width, canvas.height)</p>
+<p>在整个小游戏代码中首次调用 wx.createCanvas() 创建的是上屏
+Canvas，之后调用则创建的是离屏 Canvas。如果你的项目中使用了官方提供的
+Adapter 即 weapp-adapter.js（关于什么是 Adpater 请参考官方教程
+Adapter），那么你此时创建的会是一个离屏 Canvas。因为在 weapp-adapter.js
+已经调用了一次 wx.createCanvas()，并把返回的 canvas
+作为全局变量暴露出来。假设你的项目目录结构如下：</p>
+<p>├── game.js ├── weapp-adapter.js └── game.json</p>
+<p>在 weapp-adapter.js 中已经调用了一次 wx.createCanvas()，并把返回的
+canvas 作为全局变量暴露出来。</p>
+<p>// weapp-adapter canvas = wx.createCanvas()</p>
+<p>如果你在 require weapp-adapter.js 之后再调用
+wx.createCanvas()，那么创建的 Canvas 会是一个离屏的
+Canvas，因为此时已经不是对该 API 的首次调用。</p>
+<p>require(‘./weapp-adapter’) var myCanvas = wx.createCanvas()</p>
+</div>
+<div class="section" id="canvas">
+<h2>6.4.9. 在 Canvas 上进行绘制<a class="headerlink" href="#canvas" title="永久链接至标题">¶</a></h2>
+<p>但是由于没有在 canvas 上进行绘制，所以 canvas 是透明的。使用 2d
+渲染上下文的进行简单的绘制，可以在屏幕左上角看到一个 100x100
+的红色矩形。</p>
+<p>var context = canvas.getContext(‘2d’) context.fillStyle = ‘red’
+context.fillRect(0, 0, 100, 100)</p>
+<p>通过 Canvas.getContext() 方法可以获取 2d 或 WebGL 渲染上下文
+RenderingContext，调用渲染上下文的绘制方法可以在 Canvas
+上进行绘制。小游戏基本上支持 2d 和 WebGL 1.0 所有的属性和方法，详情请见
+RenderingContext。由于使用 WebGL
+的绘制过程较为复杂，所以本文中的示例代码都以 2d
+渲染上下文的绘制方法编写。</p>
+<p>通过设置 width 和 height 属性可以改变 Canvas 对象的宽高，但这也会导致
+Canvas 内容的清空和渲染上下文的重置。</p>
+<p>canvas.width = 300 canvas.height = 300</p>
+</div>
+<div class="section" id="id8">
+<h2>6.4.10. 显示图片<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>通过 wx.createImage() 接口，可以创建一个 Image 对象。Image
+对象可以加载图片。当 Image 对象被绘制到 Canvas
+上时，图片才会显示在屏幕上。</p>
+<p>var image = wx.createImage()</p>
+<p>设置 Image 对象的 src
+属性可以加载一张本地图片或网络图片，当图片加载完毕时会执行注册的 onload
+回调函数，此时可以将 Image 对象绘制到 Canvas 上。</p>
+<p>image.onload = function () { console.log(image.width, image.height)
+context.drawImage(image, 0, 0) } image.src = ‘logo.png’</p>
+</div>
+<div class="section" id="id9">
+<h2>6.4.11. 创建多个 Canvas<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>在整个小游戏运行期间，首次调用 wx.createCanvas 接口创建的是一个上屏
+Canvas。在这个 canvas
+上绘制的内容都将显示在屏幕上。而第二次、第三次等后几次调用
+wx.createCanvas 创建的都会是离屏 Canvas。在离屏 Canvas
+上绘制的内容仅仅只是绘制到了这个离屏 Canvas 上，并不会显示在屏幕上。</p>
+<p>以如下代码为例，运行后会发现屏幕上并没有在 (0, 0) 的位置显示 100x100
+的红色矩形。因为我们是在一个离屏的 Canvas 绘制的。</p>
+<p>var screenCanvas = wx.createCanvas() var offScreenCanvas =
+wx.createCanvas() var offContext = offScreenCanvas.getContext(‘2d’)
+offContext.fillStyle = ‘red’ offContext.fillRect(0, 0, 100, 100)</p>
+<p>为了让这个红色矩形显示在屏幕上，我们需要把离屏的 offScreenCanvas
+绘制到上屏的 screenCanvas 上。</p>
+<p>var screenContext = screenCanvas.getContext(‘2d’)
+screenContext.drawImage(offScreenCanvas, 0, 0)</p>
+</div>
+<div class="section" id="id10">
+<h2>6.4.12. 动画<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>在 JavaScript 中，一般通过 setInterval/setTimeout/requestAnimationFrame
+来实现动画效果。小游戏对这些 API 提供了支持：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">setInterval</span><span class="p">()</span>
+<span class="nx">setTimeout</span><span class="p">()</span>
+<span class="nx">requestAnimationFrame</span><span class="p">()</span>
+<span class="nx">clearInterval</span><span class="p">()</span>
+<span class="nx">clearTimeout</span><span class="p">()</span>
+<span class="nx">cancelAnimationFrame</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>另外，还可以通过 wx.setPreferredFramesPerSecond() 修改执行
+requestAnimationFrame 回调函数的频率，以降低性能消耗。</p>
+</div>
+<div class="section" id="id11">
+<h2>6.4.13. 触摸事件<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>响应用户与屏幕的交互是游戏中必不可少的部分，小游戏参照 DOM 中的
+TouchEvent 提供了以下监听触摸事件的 API：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">wx</span><span class="p">.</span><span class="nx">onTouchStart</span><span class="p">()</span>
+<span class="nx">wx</span><span class="p">.</span><span class="nx">onTouchMove</span><span class="p">()</span>
+<span class="nx">wx</span><span class="p">.</span><span class="nx">onTouchEnd</span><span class="p">()</span>
+<span class="nx">wx</span><span class="p">.</span><span class="nx">onTouchCancel</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>wx.onTouchStart(function (e) { console.log(e.touches) })</p>
+<p>wx.onTouchMove(function (e) { console.log(e.touches) })</p>
+<p>wx.onTouchEnd(function (e) { console.log(e.touches) })</p>
+<p>wx.onTouchCancel(function (e) { console.log(e.touches) })</p>
+</div>
+<div class="section" id="id12">
+<h2>6.4.14. 全局对象<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<p>window 对象是浏览器环境下的全局对象。小游戏的运行环境中没有 BOM
+API，因此没有 window 对象。但是提供了全局对象
+GameGlobal，所有全局定义的变量都是 GameGlobal 的属性。</p>
+<p>console.log(GameGlobal.setTimeout === setTimeout)
+console.log(GameGlobal.requestAnimationFrame === requestAnimationFrame)
+// true</p>
+<p>开发者可以根据需要把自己封装的类和函数挂载到 GameGlobal 上。</p>
+<p>GameGlobal.render = function () { //省略方法的具体实现… }</p>
+<p>render()</p>
+<p>GameGlobal 是一个全局对象，本身也是一个存在循环引用的对象。</p>
+<p>console.log(GameGlobal === GameGlobal.GameGlobal)</p>
+<p>console.log 无法在真机上将存在循环引用的对象输出到 vConsole
+中。因此真机调试时请注释 console.log(GameGlobal)
+这样的代码，否则将会产生这样的错误</p>
+<p>An object width circular reference can’t be logged</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../analysis/analysis.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../introduce/qrcode.html" class="btn btn-neutral float-left" title="6.3. 扫普通链接二维码打开小程序" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

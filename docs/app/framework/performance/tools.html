@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>微信小游戏接入指南 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">5. 小程序开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../game/index.html">6. 游戏开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../contents.html">Docs</a> &raquo;</li>
+        
+      <li>微信小游戏接入指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/app/framework/performance/tools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>微信小游戏接入指南<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>产品定位及功能介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>微信小游戏是小程序的一个类目。用户完成小程序注册后，可选择“游戏”类目并开始开发、调试小游戏。</p>
+</div>
+<div class="section" id="id3">
+<h2>小游戏注册<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>注册小程序帐号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>在微信公众平台官网首页（mp.weixin.qq.com）点击右上角的“立即注册”按钮。</p>
+</div>
+<div class="section" id="id5">
+<h3>选择注册的帐号类型<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>选择“小程序”，点击“查看类型区别”可查看不同类型帐号的区别和优势。</p>
+</div>
+<div class="section" id="id6">
+<h3>填写邮箱和密码<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>请填写未注册过公众平台、开放平台、企业号、未绑定个人号的邮箱。</p>
+</div>
+<div class="section" id="id7">
+<h3>激活邮箱<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>登录邮箱，查收激活邮件，点击激活链接。</p>
+</div>
+<div class="section" id="id8">
+<h3>填写主体信息<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>点击激活链接后，继续下一步的注册流程。请选择主体类型选择，完善主体信息和管理员信息。</p>
+<div class="section" id="id9">
+<h4>选择主体类型<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<p>主体类型说明如下：</p>
+</div>
+<div class="section" id="id10">
+<h4>填写主体信息并选择验证方式<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>企业类型帐号可选择两种主体验证方式。 方式一：需要用公司的对公账户向腾讯公司打款来验证主体身份。打款信息在提交主体信息后可以查看到。 方式二：通过微信认证验证主体身份，需支付300元认证费。认证通过前，小程序部分功能暂无法使用。
+
+政府、媒体、其他组织类型帐号，必须通过微信认证验证主体身份。认证通过前，小程序部分功能暂无法使用。
+
+微信认证入口：登录小程序 - 设置 - 微信认证详情
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h4>填写管理员信息<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+</div>
+<div class="section" id="id12">
+<h4>确认主体信息不可变更<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+</div>
+<div class="section" id="id13">
+<h4>点击确认完成注册流程<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<p>选择对公打款的用户，请根据页面提示，向指定的收款帐号汇入指定金额。
+注意：请在10天内完成汇款，否则将注册失败</p>
+<p>选择通过微信认证验证主体身份的用户，完成注册流程后请尽快进行微信认证，认证完成之前部分功能暂不可使用。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>小游戏信息完善及开发前准备<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id15">
+<h3>登录小程序管理平台<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p>完成注册后，在微信公众平台官网首页（mp.weixin.qq.com）的登录入口直接登录</p>
+<p>完善小程序信息</p>
+<p>完成注册后，微信小程序信息完善步骤和开发可同步进行。</p>
+<p>选择对公打款的用户，完成汇款验证后，可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。</p>
+<p>选择通过微信认证验证主体身份的用户，需先完成微信认证后，才可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。
+小游戏类目开放范围</p>
+<p>小游戏面向个人、企业、媒体、政府及其他组织主体开放。其中，个人开发者主体小游戏暂不支持开通虚拟支付。
+开发前准备 绑定项目成员</p>
+<p>登录微信公众平台小程序，进入用户身份-
+绑定小程序项目成员，包括开发者、体验者及其他成员。 获取AppID</p>
+<p>进入“设置-开发设置”，获取AppID信息。</p>
+<p>阅读开发文档并下载开发者工具</p>
+<p>点击页面右上角文档-开发，详细阅读开发者文档并进入下载页面，下载开发者工具。
+开发者工具的使用 下载并安装开发者工具 登录</p>
+<p>开发者工具使用管理员或者绑定的开发者微信号扫码登录。</p>
+<p>创建项目</p>
+<p>小程序的管理员或已绑定的开发者可以创建项目。需要填写AppID、项目名称及本地开发目录。</p>
+<p>开发</p>
+<p>管理员和开发者可在开发者工具内完成小程序的开发、调试、预览、上传代码等操作。</p>
+<p>预览</p>
+<p>小程序的管理员或是开发者可点击左侧“项目”，进入上传/预览页面。点击“预览”，开发者可用本人微信扫码，在手机内预览小程序的效果。</p>
+<p>注意：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>开发工具上的二维码仅限于登录开发工具的开发者本人可以扫码并预览，其他人无法扫码预览。
+请用微信客户端iOS或Android的6.3.27及以上版本才可以扫码预览。
+</pre></div>
+</div>
+<p>上传代码</p>
+<p>小程序的管理员可点击左侧“项目”，进入上传/预览页面，使用管理员本人微信号扫码确认上传。
+注意：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>只有管理员有权限可以上传，开发者没有权限上传。
+</pre></div>
+</div>
+<p>代码上传后可在微信公众平台（mp.weixin.qq.com），开发管理页面中看到对应提交的版本。</p>
+<p>代码审核与发布 提交审核</p>
+<p>登录微信公众平台小程序，进入开发管理，开发版本中展示已上传的代码，管理员可提交审核或是删除代码。</p>
+<p>审核信息填写 游戏资质提交及类目确认</p>
+<p>确认游戏类目，并且提交资质文档。</p>
+<p>非个人主体需提交：《广电总局版号批文》
+、《文化部备案信息》、《计算机软件著作权登记证书》、《游戏自审自查报告》</p>
+<p>个人主体需提交：《计算机软件著作权登记证书》、《游戏自审自查报告》</p>
+<p>测试帐号</p>
+<p>当小程序需要开发者提供测试帐号才能完成审核体验时，小程序在首次提交审核时将被打回，再次提交审核时将开放提供测试帐号的入口，该入口将由开发者提供帐号给微信审核人员审核微信小程序时登录使用。</p>
+<p>完成提交</p>
+<p>提交审核完成后，开发管理页中审核版本模块展示审核进度。</p>
+<p>提示：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>开发者可参考《微信小程序平台常见拒绝情形》，详细了解审核标准。
+</pre></div>
+</div>
+<p>代码发布</p>
+<p>代码审核通过，需要开发者手动点击发布，小程序才会发布到线上提供服务。</p>
+<p>注意： 内测期间，代码发布按钮不可点击。 小游戏申请微信认证</p>
+<p>政府、媒体、其他组织类型帐号，必须通过微信认证验证主体身份。企业类型帐号，可以根据需要确定是否申请微信认证。已认证帐号可使用微信支付权限。</p>
+<p>个人类型帐号暂不支持微信认证。</p>
+<p>认证入口：登录小程序—设置—基本设置—微信认证—详情 小游戏申请虚拟支付
+开通微信支付</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">主体类型为个体工商户或企业已认证小游戏</span>
+
+<span class="nx">开通微信支付</span>
+</pre></div>
+</div>
+<p>开通虚拟支付</p>
+<p>支付协议签订</p>
+<p>确认仔细阅读支付协议并签订同意</p>
+<p>设置提现账户</p>
+<p>用户在小游戏内完成的交易款项经结算后会提现至开发者的银行账户</p>
+<p>游戏币托管</p>
+<p>游戏类目内，游戏币需托管至平台</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">管理员进行授权</span>
+
+<span class="nx">填写游戏币名称及兑换比例</span>
+
+<span class="nx">游戏分区配置</span>
+
+<span class="nx">联调发布</span>
+
+<span class="nx">应用上线申请提交后需通过审核</span>
+</pre></div>
+</div>
+<p>支付订单查询</p>
+<p>开通虚拟支付后，可查询支付订单</p>
+<p>公众号关联小程序</p>
+<p>公众号关联小程序后，将可在图文消息、自定义菜单、模板消息等功能中使用小程序。</p>
+<p>关联规则：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>所有公众号都可以关联小程序。
+一个公众号可关联10个同主体的小程序，3个不同主体的小程序。
+一个小程序可关联500个公众号。
+公众号一个月可新增关联小程序13次，小程序一个月可新增关联500次。
+</pre></div>
+</div>
+<p>关联流程：</p>
+<p>登录公众号后台-小程序-小程序管理-添加-关联小程序</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

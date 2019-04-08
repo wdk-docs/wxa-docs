@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7.3. 小程序数据 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="7.4. 自定义分析" href="custom.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="term.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../game/index.html">6. 游戏开发</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">7. 数据分析</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">7.1. 功能概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="regular.html">7.2. 常规分析</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.3. 小程序数据</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">7.3.1. 功能概述</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">7.3.1.1. 常规分析</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">7.3.1.2. 自定义分析</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">7.3.2. 名词解释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">7.3.3. 指标解释</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="custom.html">7.4. 自定义分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="assistant.html">7.5. 小程序数据助手</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">7. 数据分析</a> &raquo;</li>
+        
+      <li>7.3. 小程序数据</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/analysis/function.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>7.3. 小程序数据<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>7.3.1. 功能概述<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>小程序数据分析，是面向小程序开发者、运营者的数据分析工具，提供关键指标统计、实时访问监控、自定义分析等，帮助小程序产品迭代优化和运营。主要功能包括每日例行统计的标准分析，以及满足用户个性化需求的自定义分析。</p>
+<div class="section" id="id3">
+<h3>7.3.1.1. 常规分析<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p><strong>概况：</strong>提供小程序关键指标趋势以及top页面访问数据，快速了解小程序发展概况；</p>
+<p><strong>访问分析：</strong>提供小程序用户访问规模、来源、频次、时长、深度、留存以及页面详情等数据，具体分析用户新增、活跃和留存情况；</p>
+<p><strong>实时统计：</strong>提供小程序实时访问数据，满足实时监控需求；</p>
+<p><strong>用户画像：</strong>提供小程序的用户画像数据，包括用户年龄、性别、地区、终端及机型分布。</p>
+<p>详情查看<a class="reference external" href="https://mp.weixin.qq.com/debug/wxadoc/analysis/regular/?t=2018323">常规分析</a></p>
+</div>
+<div class="section" id="id4">
+<h3>7.3.1.2. 自定义分析<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p><strong>自定义分析：</strong>配置自定义上报，精细跟踪用户在小程序内的行为，结合用户属性、系统属性、事件属性进行灵活多维的事件分析和漏斗分析，满足小程序的个性化分析需求。</p>
+<p>详情查看<a class="reference external" href="https://mp.weixin.qq.com/debug/wxadoc/analysis/custom/?t=2018323">自定义分析</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>7.3.2. 名词解释<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p><strong>用户：</strong>使用过小程序的微信用户，根据openid来判断。</p>
+<p><strong>页面：</strong>小程序的页面，以页面路径表示，如index, product/list。</p>
+<p><strong>受访页：</strong>用户访问的所有小程序页面均可称为受访页。</p>
+<p><strong>入口页：</strong>用户打开小程序时首先进入的页面称为入口页，例如用户从页面A进入小程序，跳转到页面B，A为入口页，B不是。</p>
+<p><strong>退出页：</strong>用户离开小程序时最后访问的页面称为退出页，例如用户从页面A跳转到页面B，从页面B退出小程序，B为退出页，A不是</p>
+<p><strong>场景：</strong>用户打开小程序时的场景，如通过扫描二维码打开小程序，场景为二维码。</p>
+<p><strong>访问：</strong>用户浏览小程序页面的行为。</p>
+<p><strong>分享：</strong>用户点击小程序内或小程序外菜单，将小程序及其页面分享给好友的行为。</p>
+<p><strong>新增：</strong>用户首次访问小程序页面，即称为新增。</p>
+<p><strong>活跃：</strong>用户在一段时间内访问过小程序即称为活跃。</p>
+<p><strong>停留：</strong>用户从打开小程序内页面，到主动关闭或超时退出小程序的过程。切换到后台、显示到聊天顶部，均不算停留在小程序。</p>
+<p><strong>留存：</strong>区分新增留存和活跃留存，某个时间段内新增或活跃的用户，经过一段时间后仍然使用小程序，即称为留存。</p>
+<p><strong>事件：</strong>自定义分析中进行用户行为数据收集和分析的模型，表示某个用户行为。</p>
+<p><strong>漏斗：</strong>自定义分析中由一系列事件组成的数据分析模型，用于分析业务流程中每个步骤的用户转化与流失。</p>
+</div>
+<div class="section" id="id6">
+<h2>7.3.3. 指标解释<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p><strong>打开次数：</strong>打开小程序总次数。用户从打开小程序到主动关闭或超时退出小程序的过程，计为一次。</p>
+<p><strong>访问次数：</strong>访问小程序页面的总次数。多个页面之间跳转、同一页面的重复访问计为多次访问。</p>
+<p><strong>访问人数：</strong>访问小程序页面的总用户数，同一用户多次访问不重复计。</p>
+<p><strong>新用户数：</strong>首次访问小程序页面的用户数，同一用户多次访问不重复计。</p>
+<p><strong>人均停留时长：</strong>平均每个用户停留在小程序页面的总时长，即总停留时长/访问人数。</p>
+<p><strong>次均停留时长：</strong>平均每次打开小程序停留在小程序页面的总时长，即总停留时长/打开次数。</p>
+<p><strong>平均访问深度：</strong>平均每次打开小程序访问的去重页面数。</p>
+<p><strong>入口页次数：</strong>小程序页面作为入口页的访问次数，例如用户从页面A进入小程序，跳转到页面B，A为入口页，B不是。</p>
+<p><strong>退出页次数：</strong>小程序页面作为退出页的访问次数，例如用户从页面A跳转到页面B，从页面B退出小程序，B为退出页，A不是。</p>
+<p><strong>退出率：</strong>小程序页面作为退出页的访问次数占比，即退出页次数/访问次数。</p>
+<p><strong>分享次数：</strong>分享小程序页面的总次数。</p>
+<p><strong>分享人数：</strong>分享小程序页面的总人数，同一用户多次分享不重复计。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="custom.html" class="btn btn-neutral float-right" title="7.4. 自定义分析" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="term.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

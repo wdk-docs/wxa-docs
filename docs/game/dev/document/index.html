@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>&lt;no title&gt; &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">6. 游戏开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../contents.html">Docs</a> &raquo;</li>
+        
+      <li>&lt;no title&gt;</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/game/dev/document/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <ul class="simple">
+<li><p>API:</p>
+<ul>
+<li><p>渲染: 画布 wx.createCanvas Canvas RenderingContext
+Canvas.getContext Canvas.toTempFilePath Canvas.toDataURL
+Canvas.toTempFilePathSync 图片 wx.createImage Image 字体
+wx.getTextLineHeight wx.loadFont 帧率
+wx.setPreferredFramesPerSecond cancelAnimationFrame
+requestAnimationFrame</p></li>
+<li><p>系统 生命周期 wx.exitMiniProgram wx.getLaunchOptionsSync wx.onHide
+wx.offHide wx.onShow wx.offShow 系统信息 wx.getSystemInfo
+wx.getSystemInfoSync 系统事件 wx.onAudioInterruptionEnd
+wx.offAudioInterruptionEnd wx.onAudioInterruptionBegin
+wx.offAudioInterruptionBegin wx.onError wx.offError 触摸事件
+wx.onTouchStart wx.offTouchStart wx.onTouchMove wx.offTouchMove
+wx.onTouchEnd wx.offTouchEnd wx.onTouchCancel wx.offTouchCancel
+Touch</p></li>
+<li><p>设备 加速计 wx.onAccelerometerChange wx.startAccelerometer
+wx.stopAccelerometer 电量 wx.getBatteryInfo wx.getBatteryInfoSync
+剪贴板 wx.getClipboardData wx.setClipboardData 罗盘
+wx.onCompassChange wx.startCompass wx.stopCompass 网络
+wx.getNetworkType wx.onNetworkStatusChange 屏幕
+wx.getScreenBrightness wx.setKeepScreenOn wx.setScreenBrightness
+振动 wx.vibrateShort wx.vibrateLong</p></li>
+<li><p>文件 wx.getFileSystemManager FileSystemManager Stats
+FileSystemManager.access FileSystemManager.accessSync
+FileSystemManager.copyFile FileSystemManager.copyFileSync
+FileSystemManager.getFileInfo FileSystemManager.getSavedFileList
+Stats.isDirectory Stats.isFile FileSystemManager.mkdir
+FileSystemManager.mkdirSync FileSystemManager.removeSavedFile
+FileSystemManager.readFile FileSystemManager.rename
+FileSystemManager.rmdir FileSystemManager.readdir
+FileSystemManager.readdirSync FileSystemManager.renameSync
+FileSystemManager.rmdirSync FileSystemManager.readFileSync
+FileSystemManager.saveFile FileSystemManager.stat
+FileSystemManager.saveFileSync FileSystemManager.statSync
+FileSystemManager.unlink FileSystemManager.unzip
+FileSystemManager.unlinkSync FileSystemManager.writeFile
+FileSystemManager.writeFileSync</p></li>
+<li><p>位置 wx.getLocation</p></li>
+<li><p>网络</p></li>
+<li><p>开放接口 登录 wx.checkSession wx.login code2accessToken 授权
+wx.authorize 用户信息 wx.getUserInfo UserInfo 设置 wx.getSetting
+wx.openSetting AuthSetting 微信运动 wx.getWeRunData 开放数据
+wx.getFriendCloudStorage wx.getGroupCloudStorage
+wx.getUserCloudStorage wx.getUserInfo wx.removeUserCloudStorage
+wx.setUserCloudStorage KVData UserGameData removeUserStorage
+setUserStorage 开放数据域 wx.getOpenDataContext wx.onMessage
+OpenDataContext OpenDataContext.postMessage 接口调用凭证
+getAccessToken</p></li>
+<li><p>转发 wx.getShareInfo wx.hideShareMenu wx.onShareAppMessage
+wx.offShareAppMessage wx.showShareMenu wx.shareAppMessage
+wx.updateShareMenu</p></li>
+<li><p>调试 wx.setEnableDebug</p></li>
+<li><p>数据缓存 wx.clearStorage wx.clearStorageSync wx.getStorage
+wx.getStorageInfo wx.getStorageSync wx.getStorageInfoSync
+wx.removeStorage wx.removeStorageSync wx.setStorage
+wx.setStorageSync</p></li>
+<li><p>界面 交互 wx.hideToast wx.hideLoading wx.showModal wx.showToast
+wx.showLoading wx.showActionSheet 键盘 wx.hideKeyboard
+wx.onKeyboardInput wx.offKeyboardInput wx.onKeyboardConfirm
+wx.offKeyboardConfirm wx.onKeyboardComplete wx.offKeyboardComplete
+wx.showKeyboard 菜单 wx.setMenuStyle 状态栏 wx.setStatusBarStyle
+窗口 wx.onWindowResize wx.offWindowResize</p></li>
+<li><p>更新 wx.getUpdateManager UpdateManager UpdateManager.applyUpdate
+UpdateManager.onCheckForUpdate UpdateManager.onUpdateReady
+UpdateManager.onUpdateFailed</p></li>
+<li><p>Worker wx.createWorker Worker Worker.onMessage Worker.postMessage
+Worker.terminate</p></li>
+<li><p>媒体 音频 wx.createInnerAudioContext InnerAudioContext
+InnerAudioContext.destroy InnerAudioContext.offCanplay
+InnerAudioContext.onPause InnerAudioContext.onStop
+InnerAudioContext.offStop InnerAudioContext.onEnded
+InnerAudioContext.offEnded InnerAudioContext.onTimeUpdate
+InnerAudioContext.onPlay InnerAudioContext.onError
+InnerAudioContext.offPause InnerAudioContext.onWaiting
+InnerAudioContext.offWaiting InnerAudioContext.onSeeking
+InnerAudioContext.offSeeking InnerAudioContext.onSeeked
+InnerAudioContext.offSeeked InnerAudioContext.offPlay
+InnerAudioContext.offTimeUpdate InnerAudioContext.onCanplay
+InnerAudioContext.offError InnerAudioContext.pause
+InnerAudioContext.pause InnerAudioContext.play
+InnerAudioContext.seek 录音 wx.getRecorderManager RecorderManager
+RecorderManager.onPause RecorderManager.onStop
+RecorderManager.onFrameRecorded RecorderManager.onError
+RecorderManager.onStart RecorderManager.pause
+RecorderManager.resume RecorderManager.stop RecorderManager.start
+图片 wx.chooseImage wx.previewImage wx.saveImageToPhotosAlbum
+ImageFile 视频 wx.createVideo wx.createVideo Video Video
+Video.exitFullScreen Video.exitFullScreen Video.offPause
+Video.onEnded Video.offEnded Video.onTimeUpdate
+Video.offTimeUpdate Video.onError Video.offError Video.onPlay
+Video.offError Video.onError Video.offTimeUpdate
+Video.onTimeUpdate Video.onPause Video.offWaiting Video.onWaiting
+Video.offPlay Video.offWaiting Video.onPlay Video.offPlay
+Video.onPause Video.offPause Video.onEnded Video.offEnded
+Video.onWaiting Video.pause Video.play Video.pause Video.play
+Video.requestFullScreen Video.requestFullScreen Video.seek
+Video.stop Video.seek Video.stop</p></li>
+<li><p>性能 wx.getPerformance wx.triggerGC Performance Performance.now</p></li>
+<li><p>定时器 clearTimeout clearInterval setTimeout setInterval</p></li>
+<li><p>虚拟支付 wx.requestMidasPayment midasCancelPay midasGetBalance
+midasPay midasPresent</p></li>
+</ul>
+</li>
+</ul>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>小程序插件功能介绍 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">小程序插件功能介绍</a><ul>
+<li><a class="reference internal" href="#id2">开发插件</a><ul>
+<li><a class="reference internal" href="#id3">开放范围及服务类目</a></li>
+<li><a class="reference internal" href="#id4">插件开发流程</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">使用插件</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html">Docs</a> &raquo;</li>
+        
+      <li>小程序插件功能介绍</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/introduce/plugin.md.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>小程序插件功能介绍<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>插件，是可被添加到小程序内直接使用的功能组件。开发者可以像开发小程序一样开发一个插件，供其他小程序使用。同时，小程序开发者可直接在小程序内使用插件，无需重复开发，为用户提供更丰富的服务。</p>
+<p>如需开发插件，请阅读开发插件部分；如需使用插件，请阅读使用插件部分。</p>
+<div class="section" id="id2">
+<h2>开发插件<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id3">
+<h3>开放范围及服务类目<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>开放范围：企业、媒体、政府及其他组织主体的小程序</p>
+<p>开发者可选择当前小程序帐号已选类目中的一个，作为插件的服务类目。以下为当前已开放的插件服务类目，将逐步开放更多类目。
+一级类目 二级类目 特殊说明 快递业与邮政 所有二级类目 医疗
+就医服务、互联网医院 仅医疗类小程序可使用 政务民生 所有二级类目 金融业
+征信业务 出行与交通 所有二级类目 生活服务 票务、生活缴费 IT科技
+所有二级类目 餐饮 点评与推荐、菜谱、餐厅排队、点餐平台、外卖平台 旅游
+所有二级类目 文娱 视频、FM/电台、音乐、有声读物、动漫 工具
+记账、投票、日历、天气、备忘录、办公、字典、计算类、报价/比价、发票查询、企业管理
+电商平台 电商平台 商业服务 招聘/求职 汽车 所有二级类目</p>
+</div>
+<div class="section" id="id4">
+<h3>插件开发流程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>以下为插件开发接入流程：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>开通插件功能
+填写开发信息并开发
+提交审核、发布
+管理插件使用申请
+</pre></div>
+</div>
+<p>开通插件功能</p>
+<p>小程序开发者无需重新注册帐号，可直接在小程序管理后台开通插件功能，完成基本信息填写后完成开通。</p>
+<p>开通入口：小程序管理后台-小程序插件</p>
+<p>填写插件基本信息，插件的基本信息将在插件申请流程、小程序基本信息页中展示。</p>
+<p>填写开发信息并完成开发</p>
+<p>设置插件的服务器域名及Token信息后，即可在开发者工具中开发插件。</p>
+<p>开发者工具内设置请见：《插件开发指南》</p>
+<p>插件版本管理</p>
+<p>开发者可在开发者工具内上传代码并在小程序插件开发助手内完成插件的开发和调试。请注意：插件暂不支持在体验版中体验</p>
+<p>在开发者工具上传代码后，开发者可”小程序管理后台-小程序插件-开发管理“内管理插件版本。</p>
+<p>提交版本审核</p>
+<p>插件发布前需要提交微信小程序团队审核，审核通过后才可发布。</p>
+<p>提交审核时，插件开发者需要填写以下信息：插件服务类目、标签及功能描述。</p>
+<p>插件服务类目：插件可从当前小程序已通过的服务类目中选择一个。已开放类目表格见插件开放范围及类目。</p>
+<p>标签：请填写与插件提供的服务相关的标签</p>
+<p>功能描述：为便于审核团队体验及审核插件功能，请开发者填写基本介绍及插件的使用说明。
+版本发布</p>
+<p>插件审核通过后，可在管理后台操作发布。插件发布后才可以被其他小程序搜索并添加。</p>
+<p>插件支持多个线上版本同时存在。 使用申请管理</p>
+<p>小程序使用插件需要经过插件开发者的同意。</p>
+<p>开发者可在”小程序管理后台-小程序插件-申请管理“内处理插件的接入申请。插件开发者可在24小时内选择”通过“或”拒绝“申请方使用插件。</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>使用插件<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>小程序开发者可便捷地把插件添加到自己的小程序内，丰富小程序的服务。当用户在使用小程序时，将可以在小程序内使用插件提供的服务。
+开放范围</p>
+<p>所有小程序 接入流程</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>在小程序管理后台添加插件
+
+小程序开发者可在“小程序管理后台-设置-第三方服务-插件管理”中查找需要的插件，并申请使用。插件开发者在24小时内通过后，小程序开发者可在小程序内使用该插件。
+
+在小程序代码中使用插件
+
+详见《插件开发文档》
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

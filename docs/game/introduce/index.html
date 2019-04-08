@@ -1,0 +1,628 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.1. 微信小游戏接入指南 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="6.2. 腾讯云支持" href="qcloud.html" />
+    <link rel="prev" title="6. 游戏开发" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">6. 游戏开发</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.1. 微信小游戏接入指南</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.1.1. 产品定位及功能介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.1.2. 小游戏注册</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">6.1.2.1. 注册小程序帐号</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">6.1.2.2. 选择注册的帐号类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">6.1.2.3. 填写邮箱和密码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">6.1.2.4. 激活邮箱</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">6.1.2.5. 填写主体信息</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">6.1.3. 小游戏信息完善及开发前准备</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15">6.1.3.1. 登录小程序管理平台</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">6.1.3.2. 完善小程序信息</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">6.1.3.3. 小游戏类目开放范围</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">6.1.3.4. 开发前准备</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">6.1.4. 开发者工具的使用</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id22">6.1.4.1. 下载并安装开发者工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">6.1.4.2. 登录</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24">6.1.4.3. 创建项目</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25">6.1.4.4. 开发</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">6.1.4.5. 预览</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id27">6.1.4.6. 上传代码</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">6.1.5. 代码审核与发布</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id29">6.1.5.1. 提交审核</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id30">6.1.5.2. 审核信息填写</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id35">6.1.6. 小游戏申请微信认证</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">6.1.7. 小游戏申请虚拟支付</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id37">6.1.7.1. 开通微信支付</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id38">6.1.7.2. 开通虚拟支付</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id39">6.1.7.3. 支付协议签订</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id40">6.1.7.4. 设置提现账户</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id41">6.1.7.5. 游戏币托管</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id42">6.1.7.6. 支付订单查询</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">6.1.8. 公众号关联小程序</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id44">6.1.8.1. 关联规则</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id45">6.1.8.2. 关联流程</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="qcloud.html">6.2. 腾讯云支持</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qrcode.html">6.3. 扫普通链接二维码打开小程序</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev/index.html">6.4. 快速上手</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">6. 游戏开发</a> &raquo;</li>
+        
+      <li>6.1. 微信小游戏接入指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/game/introduce/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6.1. 微信小游戏接入指南<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>6.1.1. 产品定位及功能介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>微信小游戏是小程序的一个类目。用户完成小程序注册后，可选择“游戏”类目并开始开发、调试小游戏。</p>
+</div>
+<div class="section" id="id3">
+<h2>6.1.2. 小游戏注册<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>6.1.2.1. 注册小程序帐号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>在微信公众平台官网首页（mp.weixin.qq.com）点击右上角的“立即注册”按钮。</p>
+<div class="figure align-center" id="id46">
+<img alt="a" src="../../_images/a.png" />
+<p class="caption"><span class="caption-text">a</span><a class="headerlink" href="#id46" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>6.1.2.2. 选择注册的帐号类型<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>选择“小程序”，点击“查看类型区别”可查看不同类型帐号的区别和优势。</p>
+</div>
+<div class="section" id="id6">
+<h3>6.1.2.3. 填写邮箱和密码<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>请填写未注册过公众平台、开放平台、企业号、未绑定个人号的邮箱。</p>
+</div>
+<div class="section" id="id7">
+<h3>6.1.2.4. 激活邮箱<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>登录邮箱，查收激活邮件，点击激活链接。</p>
+</div>
+<div class="section" id="id8">
+<h3>6.1.2.5. 填写主体信息<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>点击激活链接后，继续下一步的注册流程。请选择主体类型选择，完善主体信息和管理员信息。</p>
+<div class="section" id="id9">
+<h4>6.1.2.5.1. 选择主体类型<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<div class="figure align-center" id="id47">
+<img alt="03271" src="../../_images/03271.png" />
+<p class="caption"><span class="caption-text">03271</span><a class="headerlink" href="#id47" title="永久链接至图片">¶</a></p>
+</div>
+<p>主体类型说明如下：</p>
+</div>
+<div class="section" id="id10">
+<h4>6.1.2.5.2. 填写主体信息并选择验证方式<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>企业类型帐号可选择两种主体验证方式。
+方式一：需要用公司的对公账户向腾讯公司打款来验证主体身份。打款信息在提交主体信息后可以查看到。
+方式二：通过微信认证验证主体身份，需支付300元认证费。认证通过前，小程序部分功能暂无法使用。</p></li>
+</ul>
+<div class="figure align-center" id="id48">
+<img alt="2" src="../../_images/2.png" />
+<p class="caption"><span class="caption-text">2</span><a class="headerlink" href="#id48" title="永久链接至图片">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>政府、媒体、其他组织类型帐号，必须通过微信认证验证主体身份。认证通过前，小程序部分功能暂无法使用。</p></li>
+</ul>
+<div class="figure align-center" id="id49">
+<img alt="3" src="../../_images/3.png" />
+<p class="caption"><span class="caption-text">3</span><a class="headerlink" href="#id49" title="永久链接至图片">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>微信认证入口：登录小程序 - 设置 - 微信认证详情</p></li>
+</ul>
+<div class="figure align-center" id="id50">
+<img alt="w" src="../../_images/w.png" />
+<p class="caption"><span class="caption-text">w</span><a class="headerlink" href="#id50" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id11">
+<h4>6.1.2.5.3. 填写管理员信息<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<div class="figure align-center" id="id51">
+<img alt="4" src="../../_images/4.png" />
+<p class="caption"><span class="caption-text">4</span><a class="headerlink" href="#id51" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>6.1.2.5.4. 确认主体信息不可变更<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<div class="figure align-center" id="id52">
+<img alt="5" src="../../_images/5.png" />
+<p class="caption"><span class="caption-text">5</span><a class="headerlink" href="#id52" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id13">
+<h4>6.1.2.5.5. 点击确认完成注册流程<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<p>选择对公打款的用户，请根据页面提示，向指定的收款帐号汇入指定金额。
+注意：请在10天内完成汇款，否则将注册失败</p>
+<div class="figure align-center" id="id53">
+<img alt="6" src="../../_images/6.png" />
+<p class="caption"><span class="caption-text">6</span><a class="headerlink" href="#id53" title="永久链接至图片">¶</a></p>
+</div>
+<p>选择通过微信认证验证主体身份的用户，完成注册流程后请尽快进行微信认证，认证完成之前部分功能暂不可使用。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>6.1.3. 小游戏信息完善及开发前准备<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id15">
+<h3>6.1.3.1. 登录小程序管理平台<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p>完成注册后，在微信公众平台官网首页（mp.weixin.qq.com）的登录入口直接登录</p>
+<div class="figure align-center" id="id54">
+<img alt="a" src="../../_images/a.png" />
+<p class="caption"><span class="caption-text">a</span><a class="headerlink" href="#id54" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>6.1.3.2. 完善小程序信息<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>完成注册后，微信小程序信息完善步骤和开发可同步进行。</p>
+<p>选择对公打款的用户，完成汇款验证后，可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。</p>
+<div class="figure align-center" id="id55">
+<img alt="u" src="../../_images/u.png" />
+<p class="caption"><span class="caption-text">u</span><a class="headerlink" href="#id55" title="永久链接至图片">¶</a></p>
+</div>
+<p>选择通过微信认证验证主体身份的用户，需先完成微信认证后，才可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。</p>
+<div class="figure align-center" id="id56">
+<img alt="7" src="../../_images/7.png" />
+<p class="caption"><span class="caption-text">7</span><a class="headerlink" href="#id56" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>6.1.3.3. 小游戏类目开放范围<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<p>小游戏面向个人、企业、媒体、政府及其他组织主体开放。其中，个人开发者主体小游戏暂不支持开通虚拟支付。</p>
+</div>
+<div class="section" id="id18">
+<h3>6.1.3.4. 开发前准备<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id19">
+<h4>6.1.3.4.1. 绑定项目成员<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
+<p>登录微信公众平台小程序，进入用户身份-
+绑定小程序项目成员，包括开发者、体验者及其他成员。</p>
+</div>
+<div class="section" id="appid">
+<h4>6.1.3.4.2. 获取AppID<a class="headerlink" href="#appid" title="永久链接至标题">¶</a></h4>
+<p>进入“设置-开发设置”，获取AppID信息。</p>
+<div class="figure align-center" id="id57">
+<img alt="i" src="../../_images/i.png" />
+<p class="caption"><span class="caption-text">i</span><a class="headerlink" href="#id57" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id20">
+<h4>6.1.3.4.3. 阅读开发文档并下载开发者工具<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h4>
+<p>点击页面右上角文档-开发，详细阅读开发者文档并进入下载页面，下载开发者工具。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id21">
+<h2>6.1.4. 开发者工具的使用<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id22">
+<h3>6.1.4.1. 下载并安装开发者工具<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id23">
+<h3>6.1.4.2. 登录<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
+<p>开发者工具使用管理员或者绑定的开发者微信号扫码登录。</p>
+<div class="figure align-center" id="id58">
+<img alt="k" src="../../_images/k.png" />
+<p class="caption"><span class="caption-text">k</span><a class="headerlink" href="#id58" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id24">
+<h3>6.1.4.3. 创建项目<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+<p>小程序的管理员或已绑定的开发者可以创建项目。需要填写AppID、项目名称及本地开发目录。</p>
+<div class="figure align-center" id="id59">
+<img alt="l" src="../../_images/l.png" />
+<p class="caption"><span class="caption-text">l</span><a class="headerlink" href="#id59" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>6.1.4.4. 开发<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h3>
+<p>管理员和开发者可在开发者工具内完成小程序的开发、调试、预览、上传代码等操作。</p>
+<div class="figure align-center" id="id60">
+<img alt="k" src="../../_images/k.png" />
+<p class="caption"><span class="caption-text">k</span><a class="headerlink" href="#id60" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id26">
+<h3>6.1.4.5. 预览<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
+<p>小程序的管理员或是开发者可点击左侧“项目”，进入上传/预览页面。点击“预览”，开发者可用本人微信扫码，在手机内预览小程序的效果。</p>
+<p>注意：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>开发工具上的二维码仅限于登录开发工具的开发者本人可以扫码并预览，其他人无法扫码预览。
+请用微信客户端iOS或Android的6.3.27及以上版本才可以扫码预览。
+</pre></div>
+</div>
+<div class="figure align-center" id="id61">
+<img alt="o" src="../../_images/o.png" />
+<p class="caption"><span class="caption-text">o</span><a class="headerlink" href="#id61" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id27">
+<h3>6.1.4.6. 上传代码<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
+<p>小程序的管理员可点击左侧“项目”，进入上传/预览页面，使用管理员本人微信号扫码确认上传。
+注意：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>只有管理员有权限可以上传，开发者没有权限上传。
+</pre></div>
+</div>
+<div class="figure align-center" id="id62">
+<img alt="p" src="../../_images/p.png" />
+<p class="caption"><span class="caption-text">p</span><a class="headerlink" href="#id62" title="永久链接至图片">¶</a></p>
+</div>
+<p>代码上传后可在微信公众平台（mp.weixin.qq.com），开发管理页面中看到对应提交的版本。</p>
+<div class="figure align-center" id="id63">
+<img alt="q" src="../../_images/q.png" />
+<p class="caption"><span class="caption-text">q</span><a class="headerlink" href="#id63" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="id28">
+<h2>6.1.5. 代码审核与发布<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id29">
+<h3>6.1.5.1. 提交审核<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+<p>登录微信公众平台小程序，进入开发管理，开发版本中展示已上传的代码，管理员可提交审核或是删除代码。</p>
+<div class="figure align-center" id="id64">
+<img alt="q" src="../../_images/q.png" />
+<p class="caption"><span class="caption-text">q</span><a class="headerlink" href="#id64" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id30">
+<h3>6.1.5.2. 审核信息填写<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id31">
+<h4>6.1.5.2.1. 游戏资质提交及类目确认<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h4>
+<p>确认游戏类目，并且提交资质文档。</p>
+<p>非个人主体需提交：《广电总局版号批文》
+、《文化部备案信息》、《计算机软件著作权登记证书》、《游戏自审自查报告》</p>
+<p>个人主体需提交：《计算机软件著作权登记证书》、《游戏自审自查报告》</p>
+<div class="figure align-center" id="id65">
+<img alt="3211" src="../../_images/3211.png" />
+<p class="caption"><span class="caption-text">3211</span><a class="headerlink" href="#id65" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id32">
+<h4>6.1.5.2.2. 测试帐号<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h4>
+<p>当小程序需要开发者提供测试帐号才能完成审核体验时，小程序在首次提交审核时将被打回，再次提交审核时将开放提供测试帐号的入口，该入口将由开发者提供帐号给微信审核人员审核微信小程序时登录使用。</p>
+<div class="figure align-center" id="id66">
+<img alt="03272" src="assets/images/03272.png" />
+<p class="caption"><span class="caption-text">03272</span><a class="headerlink" href="#id66" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id33">
+<h4>6.1.5.2.3. 完成提交<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h4>
+<p>提交审核完成后，开发管理页中审核版本模块展示审核进度。</p>
+<div class="figure align-center" id="id67">
+<img alt="t" src="../../_images/t.png" />
+<p class="caption"><span class="caption-text">t</span><a class="headerlink" href="#id67" title="永久链接至图片">¶</a></p>
+</div>
+<p>提示：</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span>开发者可参考《微信小程序平台常见拒绝情形》，详细了解审核标准。
+</pre></div>
+</div>
+</div>
+<div class="section" id="id34">
+<h4>6.1.5.2.4. 代码发布<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h4>
+<p>代码审核通过，需要开发者手动点击发布，小程序才会发布到线上提供服务。</p>
+<p>注意： 内测期间，代码发布按钮不可点击。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id35">
+<h2>6.1.6. 小游戏申请微信认证<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h2>
+<p>政府、媒体、其他组织类型帐号，必须通过微信认证验证主体身份。企业类型帐号，可以根据需要确定是否申请微信认证。已认证帐号可使用微信支付权限。</p>
+<p>个人类型帐号暂不支持微信认证。</p>
+<p>认证入口：登录小程序—设置—基本设置—微信认证—详情</p>
+<div class="figure align-center" id="id68">
+<img alt="x" src="../../_images/x.png" />
+<p class="caption"><span class="caption-text">x</span><a class="headerlink" href="#id68" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id36">
+<h2>6.1.7. 小游戏申请虚拟支付<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id37">
+<h3>6.1.7.1. 开通微信支付<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">主体类型为个体工商户或企业已认证小游戏</span>
+
+<span class="nx">开通微信支付</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id69">
+<img alt="y" src="../../_images/y.png" />
+<p class="caption"><span class="caption-text">y</span><a class="headerlink" href="#id69" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id38">
+<h3>6.1.7.2. 开通虚拟支付<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h3>
+<div class="figure align-center" id="id70">
+<img alt="3212" src="../../_images/3212.png" />
+<p class="caption"><span class="caption-text">3212</span><a class="headerlink" href="#id70" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id39">
+<h3>6.1.7.3. 支付协议签订<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h3>
+<p>确认仔细阅读支付协议并签订同意</p>
+<div class="figure align-center" id="id71">
+<img alt="3213" src="../../_images/3213.png" />
+<p class="caption"><span class="caption-text">3213</span><a class="headerlink" href="#id71" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id40">
+<h3>6.1.7.4. 设置提现账户<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h3>
+<p>用户在小游戏内完成的交易款项经结算后会提现至开发者的银行账户</p>
+<div class="figure align-center" id="id72">
+<img alt="3214" src="../../_images/3214.png" />
+<p class="caption"><span class="caption-text">3214</span><a class="headerlink" href="#id72" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id41">
+<h3>6.1.7.5. 游戏币托管<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h3>
+<p>游戏类目内，游戏币需托管至平台</p>
+<div class="figure align-center" id="id73">
+<img alt="3215" src="../../_images/3215.png" />
+<p class="caption"><span class="caption-text">3215</span><a class="headerlink" href="#id73" title="永久链接至图片">¶</a></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">管理员进行授权</span>
+</pre></div>
+</div>
+<p><img alt="3231" src="../../_images/3231.png" /> 填写游戏币名称及兑换比例 <img alt="3232" src="../../_images/3232.png" /></p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">游戏分区配置</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id74">
+<img alt="3233" src="../../_images/3233.png" />
+<p class="caption"><span class="caption-text">3233</span><a class="headerlink" href="#id74" title="永久链接至图片">¶</a></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">联调发布</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id75">
+<img alt="3234" src="../../_images/3234.png" />
+<p class="caption"><span class="caption-text">3234</span><a class="headerlink" href="#id75" title="永久链接至图片">¶</a></p>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">应用上线申请提交后需通过审核</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="id76">
+<img alt="3235" src="../../_images/3235.png" />
+<p class="caption"><span class="caption-text">3235</span><a class="headerlink" href="#id76" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id42">
+<h3>6.1.7.6. 支付订单查询<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h3>
+<p>开通虚拟支付后，可查询支付订单</p>
+<div class="figure align-center" id="id77">
+<img alt="3216" src="../../_images/3216.png" />
+<p class="caption"><span class="caption-text">3216</span><a class="headerlink" href="#id77" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="id43">
+<h2>6.1.8. 公众号关联小程序<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h2>
+<p>公众号关联小程序后，将可在图文消息、自定义菜单、模板消息等功能中使用小程序。</p>
+<div class="section" id="id44">
+<h3>6.1.8.1. 关联规则<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>所有公众号都可以关联小程序。</p></li>
+<li><p>一个公众号可关联10个同主体的小程序，3个不同主体的小程序。</p></li>
+<li><p>一个小程序可关联500个公众号。</p></li>
+<li><p>公众号一个月可新增关联小程序13次，小程序一个月可新增关联500次。</p></li>
+</ol>
+</div>
+<div class="section" id="id45">
+<h3>6.1.8.2. 关联流程<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h3>
+<p>登录公众号后台-小程序-小程序管理-添加-关联小程序</p>
+<div class="figure align-center" id="id78">
+<img alt="06211" src="../../_images/06211.png" />
+<p class="caption"><span class="caption-text">06211</span><a class="headerlink" href="#id78" title="永久链接至图片">¶</a></p>
+</div>
+<div class="figure align-center" id="id79">
+<img alt="06212" src="../../_images/06212.png" />
+<p class="caption"><span class="caption-text">06212</span><a class="headerlink" href="#id79" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="qcloud.html" class="btn btn-neutral float-right" title="6.2. 腾讯云支持" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="6. 游戏开发" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

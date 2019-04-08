@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6.3. 扫普通链接二维码打开小程序 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="6.4. 快速上手" href="../dev/index.html" />
+    <link rel="prev" title="6.2. 腾讯云支持" href="qcloud.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dev/index.html">2. 开发教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">6. 游戏开发</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html">6.1. 微信小游戏接入指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qcloud.html">6.2. 腾讯云支持</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.3. 扫普通链接二维码打开小程序</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">6.3.1. 功能介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">6.3.2. 开放范围</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">6.3.3. 二维码跳转规则</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">6.3.4. 二维码内容获取</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">6.3.5. 配置流程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">6.3.6. 二维码规则</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">6.3.7. 前缀占用规则</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">6.3.8. 校验文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">6.3.9. 小程序功能页面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">6.3.10. 测试调试</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id12">6.3.10.1. 测试范围</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id13">6.3.10.2. 测试链接</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">6.3.11. 发布</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dev/index.html">6.4. 快速上手</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">6. 游戏开发</a> &raquo;</li>
+        
+      <li>6.3. 扫普通链接二维码打开小程序</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/game/introduce/qrcode.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6.3. 扫普通链接二维码打开小程序<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>为了方便小程序开发者更便捷地推广小程序，兼容线下已有的二维码，微信公众平台开放扫描普通链接二维码跳转小程序能力。</p>
+<div class="section" id="id2">
+<h2>6.3.1. 功能介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>普通链接二维码，是指开发者使用工具对网页链接进行编码后生成的二维码。</p>
+<p>线下商户可不需更换线下二维码，在小程序后台完成配置后，即可在用户扫描普通链接二维码时打开小程序，使用小程序的功能。</p>
+<p>对于普通链接二维码，目前支持使用微信“扫一扫”或微信内长按识别二维码跳转小程序。</p>
+</div>
+<div class="section" id="id3">
+<h2>6.3.2. 开放范围<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>企业、媒体、政府及其他组织类型小程序。</p>
+</div>
+<div class="section" id="id4">
+<h2>6.3.3. 二维码跳转规则<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>注意：从2017年5月开始，微信客户端支持二维码规则根据“子路径匹配”。如原有现在二维码链接为
+<code class="docutils literal notranslate"><span class="pre">http://www.qq.com/a/123456</span></code> ,其中12345为业务参数，则可配置规则
+<code class="docutils literal notranslate"><span class="pre">http://www.qq.com/a/</span></code> 实现扫码打开小程序。</p>
+<p>微信客户端扫码将按以下匹配规则控制跳转：</p>
+<ol class="arabic simple">
+<li><p>二维码链接的协议、域名与已配置的二维码规则一致。</p></li>
+<li><p>二维码链接属于后台配置的二维码规则的子路径。(如需支持子路径匹配，请确认后台配置的二维码规则以“/”结尾)</p></li>
+<li><p>如果二维码规则包含参数，链接“？”后为参数部分，参数要求前缀匹配</p></li>
+</ol>
+<p>常见匹配错误类型：</p>
+</div>
+<div class="section" id="id5">
+<h2>6.3.4. 二维码内容获取<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>在小程序后台配置二维码跳转小程序规则之后即可使用微信（6.5.6及其以上客户端版本）扫码打开小程序。</p>
+<p>二维码链接内容会以参数q的形式带给页面，在onLoad事件中提取“q”参数并自行UrlDecode一次，即可获取原二维码的完整内容。</p>
+</div>
+<div class="section" id="id6">
+<h2>6.3.5. 配置流程<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>登录小程序后台，进入“设置-开发设置-扫普通链接二维码打开小程序”，开启功能后即可配置二维码规则。</p>
+<div class="figure align-center" id="id15">
+<img alt="qrcode0" src="../../_images/qrcode0.png" />
+<p class="caption"><span class="caption-text">qrcode0</span><a class="headerlink" href="#id15" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>6.3.6. 二维码规则<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>根据二维码跳转规则，开发者需要填写需要跳转小程序的二维码规则。要求如下：</p>
+<ol class="arabic simple">
+<li><p>二维码规则的域名须通过ICP备案的验证1.</p></li>
+<li><p>支持http、https、ftp开头的链接（如：<a class="reference external" href="http://wx.qq.com">http://wx.qq.com</a>、<a class="reference external" href="https://wx.qq.com/mp/">https://wx.qq.com/mp/</a>、<a class="reference external" href="https://wx.qq.com/mp?id=123">https://wx.qq.com/mp?id=123</a>）1.</p></li>
+<li><p>一个小程序帐号可配置不多于10个二维码前缀规则。</p></li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h2>6.3.7. 前缀占用规则<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>开发者可选择是否占用符合二维码匹配规则的所有子规则。如选择占用，则其他帐号不可申请使用满足该前缀匹配规则的其他子规则。</p>
+<p>如：若开发者A配置二维码规则：<a class="reference external" href="https://wx.qq.com/mp?id=123">https://wx.qq.com/mp?id=123</a>，并选择“占用所有子规则“，其他开发者将不可以配置满足前缀匹配的子规则如https://wx.qq.com/mp?id=1234。</p>
+<div class="figure align-center" id="id16">
+<img alt="qrcode5" src="../../_images/qrcode5.png" />
+<p class="caption"><span class="caption-text">qrcode5</span><a class="headerlink" href="#id16" title="永久链接至图片">¶</a></p>
+</div>
+<p>如提示“此规则已被占用”，请联系对应小程序开发者沟通解决。</p>
+</div>
+<div class="section" id="id9">
+<h2>6.3.8. 校验文件<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>下载随机校验文件，并将文件上传至服务器指定位置的目录下，方可通过所属权校验。</p>
+<p>验证文件放置规则：
+放置于URL中声明的最后一级子目录下，若无子目录，则放置于host所属服务器的顶层目录下。请根据页面提示将验证文件放置在指定的目录下。</p>
+<div class="figure align-center" id="id17">
+<img alt="qrcode3" src="../../_images/qrcode3.png" />
+<p class="caption"><span class="caption-text">qrcode3</span><a class="headerlink" href="#id17" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>6.3.9. 小程序功能页面<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>配置扫描二维码后打开的小程序功能页面路径，如：pages/index/index。</p>
+</div>
+<div class="section" id="id11">
+<h2>6.3.10. 测试调试<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>开发者可对已配置的二维码规则进行测试和调试。</p>
+<p>测试仅对指定的测试链接和测试范围内的微信用户生效，其他用户扫码后跳转网页，不影响全网用户正常使用。在二维码规则发布后，开发者仍然可以选择在指定版本（开发版/体验版/线上版本）下测试。</p>
+<div class="section" id="id12">
+<h3>6.3.10.1. 测试范围<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>开发者可根据开发进度选择在开发板/体验版/线上版本测试“普通二维码跳转小程序”的功能。</p>
+<div class="figure align-center" id="id18">
+<img alt="qrcode7" src="../../_images/qrcode7.png" />
+<p class="caption"><span class="caption-text">qrcode7</span><a class="headerlink" href="#id18" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>6.3.10.2. 测试链接<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>填写符合二维码前缀匹配规则的二维码完整链接用于测试，如包括参数，请完整填写。</p>
+<p>一个规则可以填写不多于5个测试链接，可多次修改。若二维码与测试链接匹配，且用户微信号是小程序指定的管理员/开发者/体验者，将打开指定版本的小程序。</p>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>6.3.11. 发布<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<p>测试完成后开发者可将二维码跳转规则发布现网，发布后扫描所有符合匹配规则的二维码，将跳转至指定的小程序页面。</p>
+<div class="figure align-center" id="id19">
+<img alt="qrcode4" src="../../_images/qrcode4.png" />
+<p class="caption"><span class="caption-text">qrcode4</span><a class="headerlink" href="#id19" title="永久链接至图片">¶</a></p>
+</div>
+<p>为确保用户体验，小程序必须先发布代码才可以发布二维码跳转规则。</p>
+<p>一个小程序帐号一个月可发布不多于20次二维码跳转规则。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../dev/index.html" class="btn btn-neutral float-right" title="6.4. 快速上手" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="qcloud.html" class="btn btn-neutral float-left" title="6.2. 腾讯云支持" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

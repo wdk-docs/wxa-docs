@@ -1,0 +1,635 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>微信小程序接入指南 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">微信小程序接入指南</a><ul>
+<li><a class="reference internal" href="#id2">产品定位及功能介绍</a></li>
+<li><a class="reference internal" href="#id3">小程序注册</a><ul>
+<li><a class="reference internal" href="#id4">注册小程序帐号</a></li>
+<li><a class="reference internal" href="#id5">选择注册的帐号类型</a></li>
+<li><a class="reference internal" href="#id6">填写邮箱和密码</a></li>
+<li><a class="reference internal" href="#id7">激活邮箱</a></li>
+<li><a class="reference internal" href="#id8">填写主体信息</a><ul>
+<li><a class="reference internal" href="#id9">选择主体类型</a></li>
+<li><a class="reference internal" href="#id10">填写主体信息并选择验证方式</a></li>
+<li><a class="reference internal" href="#id11">填写管理员信息</a></li>
+<li><a class="reference internal" href="#id12">确认主体信息不可变更</a></li>
+<li><a class="reference internal" href="#id13">点击确认完成注册流程</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id14">小程序信息完善及开发前准备</a><ul>
+<li><a class="reference internal" href="#id15">登录小程序管理平台</a></li>
+<li><a class="reference internal" href="#id16">完善小程序信息</a></li>
+<li><a class="reference internal" href="#id17">面向个人开发者开放的服务类目</a></li>
+<li><a class="reference internal" href="#id18">开发前准备</a><ul>
+<li><a class="reference internal" href="#id19">绑定开发者</a></li>
+<li><a class="reference internal" href="#appid">获取AppID</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id20">代码审核与发布</a><ul>
+<li><a class="reference internal" href="#id21">提交审核</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id22">审核信息填写</a></li>
+<li><a class="reference internal" href="#id23">小程序申请微信认证</a></li>
+<li><a class="reference internal" href="#id24">小程序申请微信支付</a></li>
+<li><a class="reference internal" href="#id25">小程序绑定微信开放平台帐号</a></li>
+<li><a class="reference internal" href="#id26">公众号关联小程序</a><ul>
+<li><a class="reference internal" href="#id27">关联规则：</a></li>
+<li><a class="reference internal" href="#id28">关联流程：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../contents.html">Docs</a> &raquo;</li>
+        
+      <li>微信小程序接入指南</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/introduce/access-guide.md.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>微信小程序接入指南<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>产品定位及功能介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>微信小程序是一种全新的连接用户与服务的方式，它可以在微信内被便捷地获取和传播，同时具有出色的使用体验。</p>
+</div>
+<div class="section" id="id3">
+<h2>小程序注册<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>注册小程序帐号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>在微信公众平台官网首页（mp.weixin.qq.com）点击右上角的“立即注册”按钮。</p>
+</div>
+<div class="section" id="id5">
+<h3>选择注册的帐号类型<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>选择“小程序”，点击“查看类型区别”可查看不同类型帐号的区别和优势。</p>
+</div>
+<div class="section" id="id6">
+<h3>填写邮箱和密码<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>请填写未注册过公众平台、开放平台、企业号、未绑定个人号的邮箱。</p>
+</div>
+<div class="section" id="id7">
+<h3>激活邮箱<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>登录邮箱，查收激活邮件，点击激活链接。</p>
+</div>
+<div class="section" id="id8">
+<h3>填写主体信息<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>点击激活链接后，继续下一步的注册流程。请选择主体类型选择，完善主体信息和管理员信息。</p>
+<div class="section" id="id9">
+<h4>选择主体类型<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h4>
+<p>主体类型说明如下：</p>
+</div>
+<div class="section" id="id10">
+<h4>填写主体信息并选择验证方式<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>企业类型帐号可选择两种主体验证方式。</p>
+<ul>
+<li><p>方式一：需要用公司的对公账户向腾讯公司打款来验证主体身份。打款信息在提交主体信息后可以查看到。</p></li>
+<li><p>方式二：通过微信认证验证主体身份，需支付300元认证费。认证通过前，小程序部分功能暂无法使用。</p></li>
+</ul>
+</li>
+</ul>
+<div class="figure align-center" id="id29">
+<img alt="2" src="../_images/2.png" />
+<p class="caption"><span class="caption-text">2</span><a class="headerlink" href="#id29" title="永久链接至图片">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>政府、媒体、其他组织类型帐号，必须通过微信认证验证主体身份。认证通过前，小程序部分功能暂无法使用。</p></li>
+</ul>
+<div class="figure align-center" id="id30">
+<img alt="3" src="../_images/3.png" />
+<p class="caption"><span class="caption-text">3</span><a class="headerlink" href="#id30" title="永久链接至图片">¶</a></p>
+</div>
+<p>微信认证入口：登录小程序 - 设置 - 微信认证详情</p>
+<div class="figure align-center" id="id31">
+<img alt="w" src="../_images/w.png" />
+<p class="caption"><span class="caption-text">w</span><a class="headerlink" href="#id31" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id11">
+<h4>填写管理员信息<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h4>
+<div class="figure align-center" id="id32">
+<img alt="4" src="../_images/4.png" />
+<p class="caption"><span class="caption-text">4</span><a class="headerlink" href="#id32" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id12">
+<h4>确认主体信息不可变更<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<div class="figure align-center" id="id33">
+<img alt="5" src="../_images/5.png" />
+<p class="caption"><span class="caption-text">5</span><a class="headerlink" href="#id33" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id13">
+<h4>点击确认完成注册流程<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h4>
+<p>选择对公打款的用户，请根据页面提示，向指定的收款帐号汇入指定金额。
+注意：请在10天内完成汇款，否则将注册失败</p>
+<div class="figure align-center" id="id34">
+<img alt="6" src="../_images/6.png" />
+<p class="caption"><span class="caption-text">6</span><a class="headerlink" href="#id34" title="永久链接至图片">¶</a></p>
+</div>
+<p>选择通过微信认证验证主体身份的用户，完成注册流程后请尽快进行微信认证，认证完成之前部分功能暂不可使用。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>小程序信息完善及开发前准备<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id15">
+<h3>登录小程序管理平台<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p>完成注册后，在微信公众平台官网首页（mp.weixin.qq.com）的登录入口直接登录</p>
+<div class="figure align-center" id="id35">
+<img alt="a" src="../_images/a.png" />
+<p class="caption"><span class="caption-text">a</span><a class="headerlink" href="#id35" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>完善小程序信息<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>完成注册后，微信小程序信息完善步骤和开发可同步进行。</p>
+<p>选择对公打款的用户，完成汇款验证后，可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。</p>
+<div class="figure align-center" id="id36">
+<img alt="u" src="../_images/u.png" />
+<p class="caption"><span class="caption-text">u</span><a class="headerlink" href="#id36" title="永久链接至图片">¶</a></p>
+</div>
+<p>选择通过微信认证验证主体身份的用户，需先完成微信认证后，才可以补充小程序名称信息，上传小程序头像，填写小程序介绍并选择服务范围。</p>
+<div class="figure align-center" id="id37">
+<img alt="7" src="../_images/7.png" />
+<p class="caption"><span class="caption-text">7</span><a class="headerlink" href="#id37" title="永久链接至图片">¶</a></p>
+</div>
+<p>提示：</p>
+<p>如果选择了特殊行业的服务类目，需要提供资质材料提交审核。点击查看所需资质材料</p>
+</div>
+<div class="section" id="id17">
+<h3>面向个人开发者开放的服务类目<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<p>面向个人开发者开放的服务类目，会随着相关政策、法律法规以及平台规定的变化而变化，请开发者以提交时开放的类目为准，本文档仅供参考。</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 40%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>一级分类</p></th>
+<th class="head"><p>二级分类</p></th>
+<th class="head"><p>三级分类</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>快递业与邮政</p></td>
+<td><p>快递、物流</p></td>
+<td><p>寄件/收件</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td><p>查件</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>邮政</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>装卸搬运</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>教育</p></td>
+<td><p>教育信息服务</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>特殊人群教育</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>婴幼儿教育</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>在线教育</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>教育装备</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>出行与交通</p></td>
+<td><p>代驾</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>票务</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>生活缴费</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>家政</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>生活服务</p></td>
+<td><p>外送</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>环保回收/废品回收</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>摄影/扩印</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>婚庆服务</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td><p>餐饮</p></td>
+<td><p>点评与推荐</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>菜谱</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>餐厅排队</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>旅游</p></td>
+<td><p>旅游攻略</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>出境WiFi</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>工具</p></td>
+<td><p>记账</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>日历</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>天气</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>办公</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>字典</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>图片/音频/视频</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>计算类</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>报价/比价</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>信息查询</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>效率</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>预约</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>健康管理</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>企业管理</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>法律服务</p></td>
+<td><p>法律咨询</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td><p>在线法律服务</p></td>
+</tr>
+<tr class="row-odd"><td><p>商业服务</p></td>
+<td><p>会展服务</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>一般财务服务</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>农林牧渔</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>体育</p></td>
+<td><p>体育培训</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>在线健身</p></td>
+<td><p>/</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id18">
+<h3>开发前准备<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id19">
+<h4>绑定开发者<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
+<p>登录微信公众平台小程序，进入用户身份- 开发者，新增绑定开发者。</p>
+<p>个人主体小程序最多可绑定5个开发者，10个体验者。</p>
+<p>未认证的组织类型小程序最多可绑定10个开发者，20个体验者</p>
+<p>已认证的小程序最多可绑定20个开发者，40个体验者。</p>
+</div>
+<div class="section" id="appid">
+<h4>获取AppID<a class="headerlink" href="#appid" title="永久链接至标题">¶</a></h4>
+<p>进入“设置-开发设置”，获取AppID信息。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>代码审核与发布<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id21">
+<h3>提交审核<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<p>登录微信公众平台小程序，进入开发管理，开发版本中展示已上传的代码，管理员可提交审核或是删除代码。</p>
+</div>
+</div>
+<div class="section" id="id22">
+<h2>审核信息填写<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h2>
+<p>填写重要业务页面的类目与标签，重要业务页面组数不多于5组。</p>
+<div class="figure align-center" id="id38">
+<img alt="s" src="../_images/s.png" />
+<p class="caption"><span class="caption-text">s</span><a class="headerlink" href="#id38" title="永久链接至图片">¶</a></p>
+</div>
+<p>当小程序需要开发者提供测试帐号才能完成审核体验时，小程序在首次提交审核时将被打回，再次提交审核时将开放提供测试帐号的入口，该入口将由开发者提供帐号给微信审核人员审核微信小程序时登录使用。</p>
+<p>提交审核完成后，开发管理页中审核版本模块展示审核进度。</p>
+<div class="figure align-center" id="id39">
+<img alt="t" src="../_images/t.png" />
+<p class="caption"><span class="caption-text">t</span><a class="headerlink" href="#id39" title="永久链接至图片">¶</a></p>
+</div>
+<p>!!! tips “提示”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>开发者可参考[《微信小程序平台常见拒绝情形》](https://mp.weixin.qq.com/wxopen/wawiki?action=dir_list&amp;type=manage&amp;path=product/reject)，详细了解审核标准。
+</pre></div>
+</div>
+<p>代码审核通过，需要开发者手动点击发布，小程序才会发布到线上提供服务。</p>
+<p>!!! note “注意”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>内测期间，代码发布按钮不可点击。
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h2>小程序申请微信认证<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h2>
+<p>政府、媒体、其他组织类型帐号，必须通过微信认证验证主体身份。企业类型帐号，可以根据需要确定是否申请微信认证。已认证帐号可使用微信支付权限。</p>
+<p>个人类型帐号暂不支持微信认证。</p>
+<p>认证入口：登录小程序—设置—基本设置—微信认证—详情</p>
+<div class="figure align-center" id="id40">
+<img alt="x" src="../_images/x.png" />
+<p class="caption"><span class="caption-text">x</span><a class="headerlink" href="#id40" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id24">
+<h2>小程序申请微信支付<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h2>
+<p>已认证的小程序可申请微信支付。</p>
+<div class="figure align-center" id="id41">
+<img alt="y" src="../_images/y.png" />
+<p class="caption"><span class="caption-text">y</span><a class="headerlink" href="#id41" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+<div class="section" id="id25">
+<h2>小程序绑定微信开放平台帐号<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h2>
+<p>小程序绑定微信开放平台帐号后，可与帐号下的其他移动应用、网站应用及公众号打通，通过UnionID机制满足在多个应用和公众号之间统一用户帐号的需求。</p>
+<p><strong>UnionID机制说明：</strong>
+如果开发者拥有多个移动应用、网站应用、和公众帐号（包括小程序），可通过UnionID来区分用户的唯一性，因为只要是同一个微信开放平台帐号下的移动应用、网站应用和公众帐号（包括小程序），用户的unionid是唯一的。换句话说，同一用户，对同一个微信开放平台下的不同应用，UnionID是相同的。用户的UnionID可通过调用“获取用户信息”接口获取。</p>
+<p>了解“获取用户信息”接口请查看开发文档—API—开放接口—用户信息。</p>
+<p><strong>绑定小程序流程说明：</strong>
+登录微信开放平台（open.weixin.qq.com）—管理中心—公众帐号—绑定公众帐号</p>
+<div class="figure align-center" id="id42">
+<img alt="z" src="../_images/z.png" />
+<p class="caption"><span class="caption-text">z</span><a class="headerlink" href="#id42" title="永久链接至图片">¶</a></p>
+</div>
+<p>!!! note “注意”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>微信开放平台帐号必须完成开发者资质认证才可以绑定小程序。
+</pre></div>
+</div>
+</div>
+<div class="section" id="id26">
+<h2>公众号关联小程序<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h2>
+<p>公众号关联小程序后，将可在图文消息、自定义菜单、模板消息等功能中使用小程序。</p>
+<div class="section" id="id27">
+<h3>关联规则：<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><p>所有公众号都可以关联小程序。</p></li>
+<li><p>一个公众号可关联10个同主体的小程序，3个不同主体的小程序。</p></li>
+<li><p>一个小程序可关联500个公众号。</p></li>
+<li><p>公众号一个月可新增关联小程序13次，小程序一个月可新增关联500次。</p></li>
+</ol>
+</div>
+<div class="section" id="id28">
+<h3>关联流程：<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
+<p>登录公众号后台-小程序-小程序管理-添加-关联小程序</p>
+<div class="figure align-center" id="id43">
+<img alt="06211" src="../_images/06211.png" />
+<p class="caption"><span class="caption-text">06211</span><a class="headerlink" href="#id43" title="永久链接至图片">¶</a></p>
+</div>
+<div class="figure align-center" id="id44">
+<img alt="06212" src="../_images/06212.png" />
+<p class="caption"><span class="caption-text">06212</span><a class="headerlink" href="#id44" title="永久链接至图片">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

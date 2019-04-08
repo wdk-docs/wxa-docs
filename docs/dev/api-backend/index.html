@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2.9. 服务端 &mdash; wxa-docs v2019.04.01 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="2.9.1. auth.code2Session" href="auth.code2Session.html" />
+    <link rel="prev" title="2.8.1. boolean wx.canIUse(string schema)" href="../api/wx.canIUse.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../contents.html" class="icon icon-home"> wxa-docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">1. 小程序简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. 开发教程</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../dev.html">2.1. 小程序简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/index.html">2.2. 基础教程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../framework/index.html">2.3. 框架开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/index.html">2.4. 框架开发指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../devtools/index.html">2.5. 开发工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html">2.6. 参考资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wxcloud/index.html">2.7. 云开发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html">2.8. API</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.9. 服务端</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth.code2Session.html">2.9.1. auth.code2Session</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis.getDailyRetain.html">2.9.2. analysis.getDailyRetain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduce/index.html">3. 各种接入指南</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../design/index.html">4. 概要</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../app/index.html">5. 小程序开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../game/index.html">6. 游戏开发</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../analysis/index.html">7. 数据分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../product/index.html">8. 微信小程序平台运营规范</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">9. 术语表</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../contents.html">wxa-docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../contents.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">2. 开发教程</a> &raquo;</li>
+        
+      <li>2.9. 服务端</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/dev/api-backend/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>2.9. 服务端<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>开放接口
+登录
+名称      功能说明
+auth.code2Session       登录凭证校验
+用户信息
+名称      功能说明
+auth.getPaidUnionId 云调用 用户支付完成后，获取该用户的 UnionId，无需用户授权
+接口调用凭证
+名称      功能说明
+auth.getAccessToken     获取小程序全局唯一后台接口调用凭据（access_token）
+数据分析
+名称      功能说明
+访问留存
+名称      功能说明
+analysis.getDailyRetain 云调用     获取用户访问小程序日留存
+analysis.getMonthlyRetain 云调用   获取用户访问小程序月留存
+analysis.getWeeklyRetain 云调用    获取用户访问小程序周留存
+访问趋势
+名称      功能说明
+analysis.getDailyVisitTrend 云调用 获取用户访问小程序数据日趋势
+analysis.getMonthlyVisitTrend 云调用       获取用户访问小程序数据月趋势
+analysis.getWeeklyVisitTrend 云调用        获取用户访问小程序数据周趋势
+analysis.getUserPortrait 云调用    获取小程序新增或活跃用户的画像分布数据
+analysis.getVisitDistribution 云调用       获取用户小程序访问分布数据
+analysis.getVisitPage 云调用       访问页面
+analysis.getDailySummary 云调用    获取用户访问小程序数据概况
+客服消息
+名称      功能说明
+customerServiceMessage.getTempMedia 云调用 获取客服消息内的临时素材
+customerServiceMessage.send 云调用 发送客服消息给用户
+customerServiceMessage.setTyping 云调用    下发客服当前输入状态给用户
+customerServiceMessage.uploadTempMedia 云调用      把媒体文件上传到微信服务器
+模板消息
+名称      功能说明
+templateMessage.addTemplate 云调用 组合模板并添加至帐号下的个人模板库
+templateMessage.deleteTemplate 云调用      删除帐号下的某个模板
+templateMessage.getTemplateLibraryById 云调用      获取模板库某个模板标题下关键词库
+templateMessage.getTemplateLibraryList 云调用      获取小程序模板库标题列表
+templateMessage.getTemplateList 云调用     获取帐号下已存在的模板列表
+templateMessage.send 云调用        发送模板消息
+统一服务消息
+名称      功能说明
+uniformMessage.send 云调用 下发小程序和公众号统一的服务消息
+动态消息
+名称      功能说明
+updatableMessage.createActivityId 云调用   创建被分享动态消息的 activity_id
+updatableMessage.setUpdatableMsg 云调用    修改被分享的动态消息
+插件管理
+名称      功能说明
+pluginManager.applyPlugin 云调用   向插件开发者发起使用插件的申请
+pluginManager.getPluginDevApplyList 云调用 获取当前所有插件使用方（供插件开发者调用）
+pluginManager.getPluginList 云调用 查询已添加的插件
+pluginManager.setDevPluginApplyStatus 云调用       修改插件使用申请的状态（供插件开发者调用）
+pluginManager.unbindPlugin 云调用  删除已添加的插件
+附近的小程序
+名称      功能说明
+nearbyPoi.add 云调用       添加地点
+nearbyPoi.delete 云调用    删除地点
+nearbyPoi.getList 云调用   查看地点列表
+nearbyPoi.setShowStatus 云调用     展示/取消展示附近小程序
+小程序码
+名称      功能说明
+wxacode.createQRCode 云调用        获取小程序二维码，适用于需要的码数量较少的业务场景
+wxacode.get 云调用 获取小程序码，适用于需要的码数量较少的业务场景
+wxacode.getUnlimited 云调用        获取小程序码，适用于需要的码数量极多的业务场景
+内容安全
+名称      功能说明
+security.imgSecCheck 云调用        校验一张图片是否含有违法违规内容
+security.msgSecCheck 云调用        检查一段文本是否含有违法违规内容
+物流助手
+服务提供方使用
+名称      功能说明
+logistics.onGetQuota    查询商户余额事件
+logistics.getContact 云调用        获取面单联系人信息
+logistics.onAddOrder    请求下单事件
+logistics.onCancelOrder 取消订单事件
+logistics.onCheckBusiness       审核商户事件
+logistics.previewTemplate 云调用   预览面单模板
+logistics.updateBusiness 云调用    更新商户审核结果
+logistics.updatePath 云调用        更新运单轨迹
+小程序使用
+名称      功能说明
+logistics.addOrder 云调用  生成运单
+logistics.cancelOrder 云调用       取消运单
+logistics.getAllDelivery 云调用    获取支持的快递公司列表
+logistics.getOrder 云调用  获取运单数据
+logistics.getPath 云调用   查询运单轨迹
+logistics.getPrinter 云调用        获取打印员
+logistics.getQuota 云调用  获取电子面单余额
+logistics.onPathUpdate  运单轨迹更新事件
+logistics.updatePrinter 云调用     更新打印员</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auth.code2Session.html">2.9.1. auth.code2Session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.getDailyRetain.html">2.9.2. analysis.getDailyRetain</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="auth.code2Session.html" class="btn btn-neutral float-right" title="2.9.1. auth.code2Session" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api/wx.canIUse.html" class="btn btn-neutral float-left" title="2.8.1. boolean wx.canIUse(string schema)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Nosy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
